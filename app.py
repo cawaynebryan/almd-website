@@ -7,7 +7,6 @@ from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
 
 
-import requests
 
 
 app = Flask(__name__)

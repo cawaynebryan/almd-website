@@ -2,56 +2,45 @@ from flask import Blueprint, jsonify, request
 from factory.factory import db
 from models.models import Article
 
-
-
 api_bp = Blueprint('api_bp', __name__, url_prefix='')
 API_KEY_ = 'topsecretapikey'
 
 
-# Get request  
-#  /article --> fetch all article
-@api_bp.route('/article')
+@api_bp.route('/articles')  # /article --> fetch all article
 def get_all_article_from_catalogue():
     articles = db.session.query(Article).all()
     return jsonify(articles=[article.to_dict() for article in articles])
 
 
-# /article/jack-bauer --> fetch the article on jack-bauer
-@api_bp.route('/article/<int:id>')
-def get_article_by_id(id):
-    print(id)
-    try:
-        article = db.get_or_404(Article, id)
-        return jsonify(article=article.to_dict())
-    except:
+@api_bp.route('/article/<int:id>')  # /article/jack-bauer --> fetch the article on jack-bauer
+def get_article_by_id(id: int):
+    article = db.get_or_404(Article, id)
+    if article:
+        return jsonify(article=article.to_dict()), 200
+    else:
         return jsonify(error={'failure': 'Something went wrong! could not fetch the targeted article.'}), 404
 
 
-# return
-@api_bp.route('/frequent')
-def most_recent_article():  # Query for the most recent article
+@api_bp.route('/recent')  # Query for the most recent article
+def most_recent_article():
     recent_article = db.session.query(Article)[-5:]  # slicing is used to return the last five element in the list
-    return jsonify(article=[articles.to_dict() for articles in recent_article])
+    return jsonify(article=[articles.to_dict() for articles in recent_article]), 200
 
 
-# Post request
-# /article --> create one new article
-@api_bp.route('/article', methods=['POST'])  # TODO: check if db exist if not create db
+@api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
     new_article = Article(title='Web dev', picture='Cawayne', content='The brain behind this website')
-    # TODO: Information should come from form
-    try:
+    if new_article:
         db.session.add(new_article)
         db.session.commit()
-        return jsonify(respose={'success': 'successfully added new article'})   # TODO: add conditional in case of failure
-    except:
+        return jsonify(
+            respose={'success': 'successfully added new article'}), 200
+    else:
         return jsonify(error={'failure': 'Something went wrong! could not create the article.'}), 404
 
 
-# Put request
-# /article/jack-bauer --> update the article on jack-bauer
-@api_bp.route('/article/<int:id>')
-def replace_article_by_id(id):
+@api_bp.route('/article/<int:id>')  # /article/jack-bauer --> update the article on jack-bauer
+def replace_article_by_id(id: int):
     api_key = request.args.get('api-key')
     if api_key == API_KEY_:
         if api_key:
@@ -69,22 +58,16 @@ def replace_article_by_id(id):
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
 
 
-# Patch request
-# /article/jack-bauer --> update the article on jack-bauer 
-# TODO: add a patch route
-
-
-# /article --> delete all article
-@api_bp.route('/article', methods=['DELETE'])
+@api_bp.route('/article', methods=['DELETE'])  # /article --> delete all article
 def delete_article_catalogue():
     api_key = request.args.get('api-key')
     if api_key == API_KEY_:
-        try:
-            num_rows_deleted = db.session.query(Article).delete()
+        num_rows_deleted = db.session.query(Article).delete()
+        if num_rows_deleted:
             print(f"The total number of rows delete: {num_rows_deleted}")
             db.session.commit()
             return jsonify(response={'success': 'successfully deleted all the article form the database'}), 200
-        except:
+        else:
             db.session.rollback()
             return jsonify(
                 error={'failure': 'Something went wrong! could not delete the articles in the catalogue'}), 404
@@ -92,9 +75,8 @@ def delete_article_catalogue():
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
 
 
-# /article/jack-bauer --> delete a specific article base on the id provided
-@api_bp.route('/article/<int:id>', methods=['DELETE'])
-def delete_article_by_id(id):
+@api_bp.route('/article/<int:id>', methods=['DELETE'])  # /article/jack-bauer --> delete a specific article
+def delete_article_by_id(id: int):
     print(id)
     article = db.get_or_404(Article, id)
     api_key = request.args.get('api-key')
