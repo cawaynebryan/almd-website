@@ -4,10 +4,179 @@
 {% block container %}
 
 <section class="showcase">
-        <header>
-          {% include 'snippets/header.html'%}
-        </header>
-        <video src="static/files/landscape_video.mp4" muted loop autoplay></video>
+    <header>
+        {% include 'snippets/header.html'%}
+    </header>
+    <video src="static/files/landscape_video.mp4" muted loop autoplay></video>
+</section>
+
+
+<section class="info-section section-padding"> <!-- area below video on home screen with different content  -->
+
+
+    <div class="our-agency-section section-padding">
+        <h1 class="section-title"> Our Agency</h1>
+        <p style="width:60%;  margin: auto; ">laoreet suspendisse interdum consectetur libero id faucibus
+            nisl tincidunt eget nullam non nisi est sit amet
+            facilisis magna etiam tempor orci
+            eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus
+            elementum sagittis</p>
+        <div class="container m-5">
+            <div class="row">
+                <div class="col">
+                    <h2>Welcome to the agricultural land management division department</h2>
+                    <p>The Forestry Department is the lead Agency responsible for the island's forest resources. We
+                        manage approximately 117,000 hectares of forests in Jamaica.</p>
+                    <p>The Government's lead agency in the protection and conservation of the island's forest
+                        resources.</p>
+                    <button type="button" class="btn btn-success">Read More</button>
+                </div>
+                <div class="col">
+                    <img class="main-info-image" src="static/files/almd-department.png"/>
+                    <!--TODO: Image should be replaced-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="soils-day-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img class="main-info-image" src="static/files/almd-department.png">
+                    <!--TODO: image should be replaced -->
+                </div>
+                <div class="col">
+                    <h1>World Soils Day</h1>
+                    <p>As part of the EU-funded project support to increase productivity and growth in the Forest Sector
+                        of
+                        Jamaica, the Forestry
+                        Department of Jamaica presented the inaugural National Forestry Conference (NFC) on 7th - 8th
+                        December 2022. The venue for the NFC was
+                        Jamaica Conference Center, 14-20 Port Royal Street, Kingston View Details
+                    </p>
+                    <button type="button" class="btn btn-success"> Read More</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Our service section which is made up of three cards -->
+    <div class="service-section section-padding">
+        <h1> Our Services</h1>
+        <div class="container">
+            <div class="row ">
+
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" >
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col  ">
+                    <div class="card">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--end of card row-->
+        </div>
+
+    </div>
+
+    <!--   Our products section which is made up of a carousel (slideshow)   -->
+    {% include 'snippets/products-carousel.html'%}
+
+
+
+<!--    Latest news section-->
+
+    <!-- Our service section which is made up of three cards -->
+    <div class="service-section section-padding">
+        <h1> Latest News</h1>
+        <div class="container">
+            <div class="row ">
+
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">News Title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col ">
+                    <div class="card">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">News Title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col ">
+                    <div class="card">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">News Title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col ">
+                    <div class="card"">
+                        <img class="card-img-top" src="static/files/almd-department.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">News Title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--end of card row-->
+        </div>
+
+    </div>
+
 </section>
 
 {% endblock%}

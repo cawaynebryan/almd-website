@@ -5,8 +5,7 @@ from api.api import api_bp
 from almd.news.news import news_bp
 from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
-
-
+from almd.contact_us.contact_us import contact_bp
 
 
 app = Flask(__name__)
@@ -16,6 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)    # Bind database to current flask app
 ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
 app.register_blueprint(about_bp, url_prefix='')
+app.register_blueprint(contact_bp, url_prefix='')
 app.register_blueprint(news_bp, url_prefix='')
 app.register_blueprint(resources_bp, url_prefix='')
 app.register_blueprint(api_bp, url_prefix='')

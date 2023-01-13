@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="create navbar and add video to header section">
+      <change afterPath="$PROJECT_DIR$/almd/contact_us/templates/contact-us/contact-us.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/snippets/products-carousel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/contact_us/contact_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/contact_us/contact_us.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -42,13 +44,19 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/ALMD/Desktop/ALMD WEB PROJECT/static/files"
+    "last_opened_file_path": "C:/Users/ALMD/Desktop/ALMD WEB PROJECT/static/files",
+    "run.code.analysis.last.selected.profile": "aDefault"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
+      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\almd\contact_us\templates\contact-us" />
+      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\almd\contact_us\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -176,6 +184,14 @@
       <option name="presentableId" value="Default" />
       <updated>1669430160711</updated>
     </task>
+    <task id="LOCAL-00001" summary="create navbar and add video to header section">
+      <created>1673557242053</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673557242053</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,5 +204,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create navbar and add video to header section" />
+    <option name="LAST_COMMIT_MESSAGE" value="create navbar and add video to header section" />
   </component>
 </project>
