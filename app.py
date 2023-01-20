@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager
-
+from models.models import Admin
 
 from factory.factory import db
 from auth.auth import auth_bp
@@ -10,7 +10,6 @@ from almd.news.news import news_bp
 from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
-from models.models import Admin
 
 
 app = Flask(__name__)

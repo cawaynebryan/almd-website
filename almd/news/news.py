@@ -1,8 +1,9 @@
 from flask import current_app
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template
 from factory.factory import db
 from werkzeug.utils import secure_filename
 from almd.forms.forms import CatalogueForm
+from flask_login import login_required
 from models.models import Article
 from datetime import date
 import requests
@@ -30,6 +31,7 @@ def news_catalogue():
 
 
 @news_bp.route('news/update', methods=['GET', 'POST'])
+@login_required
 def news_catalogue_update():
 
     form = CatalogueForm()

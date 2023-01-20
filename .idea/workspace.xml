@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="start development of main page">
-      <change afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/templates/login/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/templates/private/private.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth/templates/register/register.html" afterDir="false" />
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="start implement login functionality with private content">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/contact_us/contact_us.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/contact_us/contact_us.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/contact_us/templates/contact-us/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/contact_us/templates/contact-us/contact-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/factory/factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/auth/templates/login/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673649386097</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="start implement login functionality with private content">
+      <created>1674247223554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674247223554</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +222,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create navbar and add video to header section" />
     <MESSAGE value="start development of main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="start development of main page" />
+    <MESSAGE value="start implement login functionality with private content" />
+    <option name="LAST_COMMIT_MESSAGE" value="start implement login functionality with private content" />
   </component>
 </project>

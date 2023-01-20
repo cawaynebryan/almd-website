@@ -7,6 +7,12 @@
 
 <!-- ####################################### FLASK FORM FOR LOGIN PAGE ###################################################-->
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {{ messages[0] }}
+{% endif %}
+{% endwith %}
+
 <form method="POST" action="{{ url_for('auth_bp.login') }}">
     {{ form.csrf_token }}
     {{ form.username.label }} {{ form.username(size=100) }}<br>
