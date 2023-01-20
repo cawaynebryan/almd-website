@@ -6,9 +6,10 @@
                 <li class="nav-link"> (876) 927-0441</li>
              </ul>
              <ul class="navbar-nav">
-                <li class="nav-link"> <a href="#"><img class="nav-img" src="static/files/instagram.png"/></a></li>
+                <li class="nav-link"> <a href="http://instagram.com"><img class="nav-img" src="static/files/instagram.png"/></a></li>
                  <li class="nav-link"><a href="#"><img class="nav-img" src="static/files/facebook.png"/></a></li>
                 <li class="nav-link"><a href="#"><img class="nav-img" src="static/files/youtube.png"/></a></li>
+                <li class="nav-link"><a href="{{ url_for('auth_bp.login') }}">Login</a></li>
              </ul>
     </div> <!-- End of fluid container -->
      <a class="navbar-brand" href="#"><img id="logo" src="static/files/logo.png"/></a>
@@ -23,14 +24,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             <ul class="navbar-nav">
-                <li class="nav-link"><a class="text-decoration-none" href="#">Home </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">About Us </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">Learn </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">Resources </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">Press Center </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">Services </a>|</li>
-                <li class="nav-link"><a class="text-decoration-none" href="#">Contact Us </a></li>
+             <ul class="navbar-nav ">
+                <li class="nav-link"><a class="text-decoration-none text-warning " href="{{ url_for('home_page') }}">Home </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning"  href="{{ url_for('about_bp.about_us') }}">About Us </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning" href="http://google.com">Learn </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning" href="#">Resources </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning" href="#">Press Center </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning" href="#">Services </a>|</li>
+                <li class="nav-link"><a class="text-decoration-none text-warning" href=" {{ url_for('contact_bp.contact_us')}} ">Contact Us </a></li>
              </ul>
         </div>  <!--end of collapsable dive-->
     </div> <!-- End of fluid container -->

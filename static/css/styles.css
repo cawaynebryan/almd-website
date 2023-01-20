@@ -5,9 +5,47 @@
     padding:0;
     text-align:center;
 
-    /* font-family: */
+    font-family: 'Montserrat', sans-serif;
 }
 
+/*
+:root{
+
+    --clr-accent-400: ;
+    --clr-accent-100: ;
+
+    --clr-primary-400: ;
+    --clr-primary-300: ;
+
+    --clr-neutral-100: ;
+    --clr-neutral-900: ;
+
+    --ff-primary:  'Montserrat';
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-regular: 300;
+    --fw-bold: ;
+
+    --fs-300: ;
+    --fs-400: ;
+    --fs-500: ;
+    --fs-600: ;
+
+}
+
+
+@media (min-width: 50em){
+  :root{
+     --fs-300: ;
+    --fs-400: ;
+    --fs-500: ;
+    --fs-600: ;
+  }
+}
+
+
+*/
 
 /* https://www.youtube.com/watch?v=8MgpE2DTTKA */
 
@@ -16,12 +54,13 @@
 }
 
 .showcase{
-    position:absolute;
+    position: relative;   /*   $$$$$  Both the showcase section and the showcase info was changed to relative to fix an issue */
     right:0;
     width:100%;
     min-height: 100vh;
     display: flex;
-    z-index: -1;
+    z-index: 1;
+
 }
 
 .showcase header{
@@ -29,7 +68,8 @@
     top:0;
     left:0;
     width:100%;
-    z-index: 2
+    z-index: 100;
+
 }
 
 .showcase video{
@@ -42,12 +82,13 @@
 }
 
 .navbar{
+
  padding: 0px;
  width:100%;
 }
 
 .navbar-nav{    /* padding to accommodate ALMD logo*/
-    margin-left: 190px;
+    margin-left: 200px;
 }
 
 .nav-img{
@@ -64,13 +105,15 @@
 
 
 section.info-section{
-    position: absolute;
-    top:700px;
+
+    position: relative;  /*   $$$$$$$$$$   was changed to relative positioning to fix problem with positioning */
+   /* top:700px;  was commented to fix showcase problem with by using relative positioning*/
      padding: 0px 60px;
-   /* background: pink;*/
+     z-index: 1;
 }
 
 section .container{ /* expand container div for each row in the main article section */
+
     width:100%;
 }
 

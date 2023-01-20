@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+{% block container %}
+{% include 'snippets/header.html'%}
+
+<!-- ####################################### FLASK FORM FOR LOGIN PAGE ###################################################-->
+
+<form method="POST" action="{{ url_for('auth_bp.login') }}">
+    {{ form.csrf_token }}
+    {{ form.username.label }} {{ form.username(size=100) }}<br>
+    {{ form.password.label }} {{ form.password(size=100) }}
+    <input class="btn btn-primary" type="submit" value="Go">
+</form>
+
+
+<!--#####################################################################################################################-->
+
+
+
+
+{% endblock %}
+
+
+
+
+

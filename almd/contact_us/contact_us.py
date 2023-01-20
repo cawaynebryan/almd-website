@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 import os
-#from controler.controler import db
+# from controler.controler import db
 from models.models import Article
 
 contact_bp = Blueprint(
@@ -12,5 +12,5 @@ contact_bp = Blueprint(
 
 
 @contact_bp.route('/contact')
-def about_us():
+def contact_us():
     return render_template('contact-us/contact-us.html')
