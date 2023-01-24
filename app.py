@@ -18,12 +18,12 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)    # Bind database to current flask app
 ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
-app.register_blueprint(auth_bp, url_prefix='')
-app.register_blueprint(about_bp, url_prefix='')
-app.register_blueprint(contact_bp, url_prefix='')
-app.register_blueprint(news_bp, url_prefix='')
-app.register_blueprint(resources_bp, url_prefix='')
-app.register_blueprint(api_bp, url_prefix='')
+app.register_blueprint(auth_bp, url_prefix='/login')
+app.register_blueprint(about_bp, url_prefix='/about')
+app.register_blueprint(contact_bp, url_prefix='/contact')
+app.register_blueprint(news_bp, url_prefix='/news')
+app.register_blueprint(resources_bp, url_prefix='/resources')
+app.register_blueprint(api_bp, url_prefix='/api')
 
 
 app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for uploading images

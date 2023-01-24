@@ -1,18 +1,28 @@
 {% extends 'base.html' %}
 
-
-
 {% block container %}
+{% include 'snippets/header.html'%}
+<link rel="stylesheet" type="text/css" href="/static/styles.css">
+
 {{ ckeditor.load() }}
 
 
-<form method='POST'  enctype="multipart/form-data">
+<div class="container form-container-blog-post" style="background:green; width:75% ">
+    <form method='POST' class="justify-content-start" action="{{url_for('news_bp.news_catalogue_update')}}" enctype="multipart/form-data">
     {{ form.csrf_token }}
     {{form.hidden_tag()}}
-    {{ form.title.label}} {{ form.title()}}<br>
-     {{ form.article.label }} {{form.article(class="form-control")}}
-    {{ form.image.label }} {{form.image}} <br>
-     <button type="submit">Submit</button>
+    {{ form.title.label(class="mt-2 form-label w-100 text-start")}} {{ form.title(class='mb-1 form-control')}}<br>
+    {{form.article()}}
+    {{ form.image.label(class="mt-2 form-label w-100 text-start") }}
+        <div    class="d-flex">
+              {{form.image(class='form-control form-control-sm w-25')}}
+                <button type="submit" class="xxx btn btn-warning btn-sm">Submit</button>
+        </div>
+
 </form>
+</div>
 
 {% endblock %}
+
+
+

@@ -11,6 +11,6 @@ about_bp = Blueprint(
     )  # create blueprint inorder to render the news package
 
 
-@about_bp.route('/whoarewe')
+@about_bp.route('/')
 def about_us():
     return render_template('about-us/about-us.html')

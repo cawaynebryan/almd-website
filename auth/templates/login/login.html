@@ -13,12 +13,15 @@
 {% endif %}
 {% endwith %}
 
-<form method="POST" action="{{ url_for('auth_bp.login') }}">
+<div class="container center">
+    <form method="POST" action="{{ url_for('auth_bp.login') }}">
     {{ form.csrf_token }}
     {{ form.username.label }} {{ form.username(size=100) }}<br>
     {{ form.password.label }} {{ form.password(size=100) }}
     <input class="btn btn-primary" type="submit" value="Go">
 </form>
+</div>
+
 
 
 <!--#####################################################################################################################-->

@@ -1,5 +1,5 @@
 from flask import current_app
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
 from factory.factory import db
 from werkzeug.utils import secure_filename
 from almd.forms.forms import CatalogueForm
@@ -12,8 +12,8 @@ import os
 
 news_bp = Blueprint(
     'news_bp', __name__, template_folder='templates',
-    static_folder='static', static_url_path=
-    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
+    static_folder='static',
+    static_url_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
 )
 
 
@@ -22,15 +22,15 @@ PORT = 5000
 HOST_AND_PORT = f'{ADDRESS}:{PORT}'
 
 
-# ########################################### NEWS  ########################################################
+# ################################################## NEWS  #############################################################
 
-@news_bp.route('/news')
+@news_bp.route('/')
 def news_catalogue():
-    articles = requests.get(HOST_AND_PORT + '/article')
+    articles = requests.get(HOST_AND_PORT + url_for('api_bp.get_all_article_from_catalogue'))
     return render_template('/news/news_page.html', articles=articles.json())
 
 
-@news_bp.route('news/update', methods=['GET', 'POST'])
+@news_bp.route('/update', methods=['GET', 'POST'])
 @login_required
 def news_catalogue_update():
 
@@ -51,13 +51,13 @@ def news_catalogue_update():
         )
         db.session.add(new_article)
         db.session.commit()
-        return render_template('/news/news_page_update.html', form=form)
+        return redirect(url_for('home_page'))
     else:
         print(form.is_submitted())
     return render_template('/news/news_page_update.html', form=form)
 
 
-#  ########################################### NEWS  ########################################################
+#  ###################################################### NEWS  ########################################################
 
 
 @news_bp.route('/events')

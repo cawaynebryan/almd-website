@@ -4,13 +4,12 @@ import os
 from models.models import Article
 
 contact_bp = Blueprint(
-    'contact_bp', __name__,
-    template_folder='templates',
+    'contact_bp', __name__, template_folder='templates',
     static_folder='static',
     static_url_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
     )  # create blueprint inorder to render the news package
 
 
-@contact_bp.route('/contact')
+@contact_bp.route('/')
 def contact_us():
     return render_template('contact-us/contact-us.html')

@@ -1,6 +1,10 @@
-<h1> The news </h1>
 
 
+
+{% extends 'base.html' %}
+
+{% block container %}
+{% include 'snippets/header.html'%}
 
 <body>
     <h1>This is the news page of our website</h1>
@@ -12,3 +16,5 @@
       <br>
      {% endfor %}
 </body>
+
+{% endblock%}
