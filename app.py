@@ -2,7 +2,8 @@ from flask import Flask, render_template
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager
 from models.models import Admin
-
+import os
+from dotenv import load_dotenv
 from factory.factory import db
 from auth.auth import auth_bp
 from api.api import api_bp
@@ -12,12 +13,15 @@ from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 
 
+load_dotenv()
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'change me before production'  # TODO: To be change and store in environment variable
+
+app.config['SECRET_KEY'] = SECRET_KEY = os.environ.get('SECRET_KEY') # TODO: To be change and store in environment variable
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)    # Bind database to current flask app
-ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
+app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for uploading images
+
 app.register_blueprint(auth_bp, url_prefix='/login')
 app.register_blueprint(about_bp, url_prefix='/about')
 app.register_blueprint(contact_bp, url_prefix='/contact')
@@ -25,13 +29,20 @@ app.register_blueprint(news_bp, url_prefix='/news')
 app.register_blueprint(resources_bp, url_prefix='/resources')
 app.register_blueprint(api_bp, url_prefix='/api')
 
+db.init_app(app)    # Bind database to current flask app
 
-app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for uploading images
+ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
 
+
+
+
+
+
+
+login_manager = LoginManager()
+login_manager.login_view = 'auth_bp.login'
 
 with app.app_context():
-    login_manager = LoginManager()
-    login_manager.login_view = 'auth_bp.login'
     login_manager.init_app(app)
 
 

@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from models.models import ContactForm
 import os
 # from controler.controler import db
 from models.models import Article
@@ -12,4 +13,7 @@ contact_bp = Blueprint(
 
 @contact_bp.route('/')
 def contact_us():
-    return render_template('contact-us/contact-us.html')
+    form = ContactForm()
+    if form.validate_on_submit():
+        pass #TODO: impliment information for sending form data here
+    return render_template('contact-us/contact-us.html', form=form)
