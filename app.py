@@ -34,11 +34,6 @@ db.init_app(app)    # Bind database to current flask app
 ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
 
 
-
-
-
-
-
 login_manager = LoginManager()
 login_manager.login_view = 'auth_bp.login'
 
