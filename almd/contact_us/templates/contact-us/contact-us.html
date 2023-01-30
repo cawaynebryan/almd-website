@@ -9,8 +9,8 @@
         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 
 </iframe>
-<div Class="Form-section">
-    <div class="form">
+<div Class="container center">
+    <form method="POST" action="{{ url_for('contact_bp.contact_us') }}">
         {{form.csrf_token}}
         {{form.hidden_tag()}}
         {{form.name.label}}
@@ -20,7 +20,8 @@
         <br>
         {{form.message.label}}
         {{form.message()}}
-    </div>
+         <input class="btn btn-primary" type="submit" value="Go">
+    </form>
 
 </div>
 

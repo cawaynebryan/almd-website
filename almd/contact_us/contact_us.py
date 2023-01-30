@@ -1,33 +1,38 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, url_for, redirect
 from models.models import ContactForm
 import os
 import smtplib
 
-from models.models import Article
 
 contact_bp = Blueprint(
     'contact_bp', __name__, template_folder='templates',
     static_folder='static',
     static_url_path=os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static')
-    )  # create blueprint inorder to render the news package
+)  # create blueprint inorder to render the news package
 
 
-@contact_bp.route('/')
+@contact_bp.route('/', methods=["POST", "GET"])
 def contact_us():
     form = ContactForm()
-    if form.validate_on_submit():
-        pass # TODO: impliment information for sending form data here
+    admin_email = os.environ['ADMIN_EMAIL']
+    admin_password = os.environ['ADMIN_EMAIL_PASSWORD']
 
-        user = os.environ.get('EMAIL_USER')
-        password = os.environ.get('EMAIL_ PASSWORD')
-        recipient = '' # TODO: Add from form
-        email_content = '' # Todo: add content from form here
+    if form.validate_on_submit():
+        client_name = form.name.data
+        client_email = form.email.data
+        client_message = form.message.data
 
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
-            connection.login(user=user, password=password)
-            connection.sendmail(from_addr=user,
-                                to_addrs=recipient,
-                                msg=f"Subject: Some Subject\n\n {email_content}")
-
+            connection.login(  # log in to email address for sending email
+                user=admin_email,
+                password=admin_password
+            )
+            connection.sendmail(
+                from_addr=admin_email,
+                to_addrs=admin_email,
+                msg=f"Subject: Some Subject\n\n Message from: {client_name}\n "
+                f"Email:{client_email}\n\n{client_message}"
+            )
+        return redirect(url_for('home'))  #there should be some redirecting taking place here
     return render_template('contact-us/contact-us.html', form=form)

@@ -12,12 +12,12 @@ from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 
-
 load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = SECRET_KEY = os.environ.get('SECRET_KEY') # TODO: To be change and store in environment variable
+app.config['SECRET_KEY'] = SECRET_KEY = os.environ.get(
+    'SECRET_KEY')  # TODO: To be change and store in environment variable
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for uploading images
@@ -29,10 +29,9 @@ app.register_blueprint(news_bp, url_prefix='/news')
 app.register_blueprint(resources_bp, url_prefix='/resources')
 app.register_blueprint(api_bp, url_prefix='/api')
 
-db.init_app(app)    # Bind database to current flask app
+db.init_app(app)  # Bind database to current flask app
 
-ckeditor = CKEditor(app)   # instantiate CKEditor onto the flask app
-
+ckeditor = CKEditor(app)  # instantiate CKEditor onto the flask app
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth_bp.login'
@@ -50,14 +49,13 @@ ADDRESS = 'http://127.0.0.1'
 PORT = 5000
 HOST_AND_PORT = f'{ADDRESS}:{PORT}'
 
-
 with app.app_context():  # Create database with context manager if not exist
     db.create_all()
 
 
 @app.route('/')
 def home_page():
-   # response = requests.get(HOST_AND_PORT + '/article')
+    # response = requests.get(HOST_AND_PORT + '/article')
     return render_template('index.html')
 
 

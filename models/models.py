@@ -11,7 +11,6 @@ def formatted_time():
     return datetime.utcnow().strftime("%Y-%m-%d")
 
 
-
 class Admin(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False)

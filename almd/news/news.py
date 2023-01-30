@@ -51,9 +51,9 @@ def news_catalogue_update():
         )
         db.session.add(new_article)
         db.session.commit()
+
         return redirect(url_for('home_page'))
-    else:
-        print(form.is_submitted())
+
     return render_template('/news/news_page_update.html', form=form)
 
 
