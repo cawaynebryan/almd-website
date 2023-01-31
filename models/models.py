@@ -40,7 +40,7 @@ class LoginForm(FlaskForm):
 class ContactForm(FlaskForm):
     name = StringField(label='Name', validators=[DataRequired()])
     email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
-    message = TextAreaField(label='Message', render_kw={"rows": 10, "cols": 40}, validators=[DataRequired()])
+    message = TextAreaField(label='Message', render_kw={"rows": 10, "cols": 70}, validators=[DataRequired()])
 
     def to_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
