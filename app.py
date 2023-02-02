@@ -16,8 +16,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = SECRET_KEY = os.environ.get(
-    'SECRET_KEY')  # TODO: To be change and store in environment variable
+app.config['SECRET_KEY'] = SECRET_KEY = os.environ.get('SECRET_KEY')
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for uploading images

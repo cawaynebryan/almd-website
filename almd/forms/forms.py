@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField, TextAreaField, FileField
-from wtforms.validators import InputRequired, Email
+from wtforms import StringField, SubmitField, DateField, TextAreaField, FileField, PasswordField
+from wtforms.validators import InputRequired, Email, DataRequired
 from flask_ckeditor import CKEditorField
 
 
@@ -12,9 +12,19 @@ class CatalogueForm(FlaskForm):
     submit = SubmitField('Submit Article')
 
 
+class RegisterForm(FlaskForm):
+    password = PasswordField("Password", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()])
+    submit = SubmitField("Sign Me Up!")
+
+
+class LoginForm(FlaskForm):
+    password = PasswordField("Password", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()])
+    submit = SubmitField("Login")
+
+
 class ContactForm(FlaskForm):
-    name = StringField('Your Name', validators=[InputRequired()])
-    email = StringField('Your Email', validators=[InputRequired(), Email()])
-    subject = StringField('Subject', validators=[InputRequired()])
-    message = TextAreaField('Message', validators=[InputRequired()])
-    submit = SubmitField('Submit')
+    name = StringField(label='Name', validators=[DataRequired()])
+    email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
+    message = TextAreaField(label='Message', render_kw={"rows": 10, "cols": 70}, validators=[DataRequired()])

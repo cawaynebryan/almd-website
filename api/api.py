@@ -9,6 +9,7 @@ API_KEY_ = 'topsecretapikey'
 @api_bp.route('/articles')  # /article --> fetch all article
 def get_all_article_from_catalogue():
     articles = db.session.query(Article).all()
+    print(type(articles))
     return jsonify(articles=[article.to_dict() for article in articles])
 
 

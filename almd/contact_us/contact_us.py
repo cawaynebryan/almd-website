@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, url_for, redirect
-from models.models import ContactForm
+from almd.forms.forms import ContactForm
 import os
 import smtplib
 
