@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add formfield and contact information to contact form">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="restructure misplaced form to correct location">
+      <change afterPath="$PROJECT_DIR$/static/css/stylesStyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/contact_us/contact_us.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/contact_us/contact_us.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snippets/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALMD/Desktop/atom-onedark-theme.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALMD/Desktop/automate-restore-file&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -54,11 +58,11 @@
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\css" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\register" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\login" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\private" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates" />
-      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675189878500</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="restructure misplaced form to correct location">
+      <created>1675355594794</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675355594794</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +268,7 @@
     <MESSAGE value="fix bug with url prefix" />
     <MESSAGE value="add functionality to contact form" />
     <MESSAGE value="add formfield and contact information to contact form" />
-    <option name="LAST_COMMIT_MESSAGE" value="add formfield and contact information to contact form" />
+    <MESSAGE value="restructure misplaced form to correct location" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructure misplaced form to correct location" />
   </component>
 </project>

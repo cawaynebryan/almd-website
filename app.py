@@ -12,6 +12,7 @@ from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 
+
 load_dotenv()
 
 app = Flask(__name__)

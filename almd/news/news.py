@@ -5,6 +5,8 @@ from werkzeug.utils import secure_filename
 from almd.forms.forms import CatalogueForm
 from flask_login import login_required
 from models.models import Article
+
+
 from datetime import date
 import requests
 import os
@@ -30,6 +32,10 @@ def news_catalogue():
     return render_template('/news/news_page.html', articles=articles.json())
 
 
+ADDRESS = 'http://127.0.0.1'
+PORT = 5000
+
+
 @news_bp.route('/update', methods=['GET', 'POST'])
 @login_required
 def news_catalogue_update():
@@ -47,7 +53,7 @@ def news_catalogue_update():
             title=form.title.data,
             created=date.today(),
             picture=form.image.data.filename,
-            content=form.article.data  # Todo: check how to render CHKediter content on page
+            content=form.article.data
         )
         db.session.add(new_article)
         db.session.commit()

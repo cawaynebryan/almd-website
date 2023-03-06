@@ -1,6 +1,11 @@
 from flask import Blueprint, jsonify, request
 from factory.factory import db
 from models.models import Article
+import requests
+
+
+
+
 
 api_bp = Blueprint('api_bp', __name__, url_prefix='')
 API_KEY_ = 'topsecretapikey'

@@ -77,7 +77,7 @@ def register():
 @auth_bp.route('/logout', methods=["POST", "GET"])
 @login_required
 def logout():
-    logout_user() # logout the current admin
+    logout_user()  # logout the current admin
     return redirect(url_for('home'))
 
 # https://flask-login.readthedocs.io/en/latest/

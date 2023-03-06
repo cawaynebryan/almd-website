@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from factory.factory import db
 from flask_login import UserMixin
 
