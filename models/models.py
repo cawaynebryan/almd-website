@@ -17,11 +17,20 @@ class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, nullable=False, default=formatted_time)
     title = db.Column(db.String(500), nullable=False)
-    picture = db.Column(db.String(500), nullable=False)
     content = db.Column(db.String(5000), nullable=False)
+    picture = db.Column(db.String(500), nullable=False)
+    # image =  db.relationship('Image',backref = 'article')
+
 
     def to_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
 
     def __repr__(self):
         return "Article database"
+
+
+# class Image(db.model):
+#     id =  db.Column(db.Integer, primary_key=True)
+#     iamgeName = db.Column(db.String(5000), nullable=False)
+#     ArticleId = db.Column(db.Integer,db.ForeignKey('Article.id'), nullable=True)
+

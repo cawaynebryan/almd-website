@@ -2,9 +2,31 @@ from flask import Blueprint, jsonify, request
 from factory.factory import db
 from models.models import Article
 import requests
+import oci
+from  oci.object_storage import UploadManager
+from oci.object_storage.models import CreateBucketDetails
+from oci.object_storage.transfer.constants import MEBIBYTE
+
+config = oci.config.from_file()
+compartment_id = config["tenancy"]
+object_storage = oci.object_storage.ObjectStorageClient(config)
+namespace = object_storage.get_namespace().data
+object_name = "sample object"
+part_size = 2 * MEBIBYTE  # part size (in bytes)
+
+
+# create example file to upload
+filename = 'multipart_object_content.txt'
+file_size_in_mebibytes = 10
+sample_content = b'a'
+with open(filename, 'wb') as f:
+    while f.tell() < MEBIBYTE * file_size_in_mebibytes:
+        f.write(sample_content * MEBIBYTE)
 
 
 
+def progress_callback(bytes_uploaded):
+    print("{} additional bytes uploaded".format(bytes_uploaded))
 
 
 api_bp = Blueprint('api_bp', __name__, url_prefix='')
@@ -35,10 +57,19 @@ def most_recent_article():
 
 @api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
+    bucket_name = 'test_bucket-0001'
+
     new_article = Article(title='Web dev', picture='Cawayne', content='The brain behind this website')
     if new_article:
         db.session.add(new_article)
         db.session.commit()
+        
+        upload_manager = UploadManager(object_storage, allow_parallel_uploads=True, parallel_process_count=3)
+        response = upload_manager.upload_file(
+            namespace, bucket_name, object_name, filename, part_size=part_size, progress_callback=progress_callback)  
+
+        
+        
         return jsonify(
             respose={'success': 'successfully added new article'}), 200
     else:
