@@ -8,6 +8,28 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.text-left {
+    text-align: left;
+ }
+
+.text-right {
+    text-align: right; /* override center alignment for this div */
+}
+
+.li-text-align  li {  /* TODO: This should be placed in an appropriate file:  */
+    text-align: left;
+    list-style-type: none;
+    padding-left: 10px;
+ }
+
+.li-text-align li::before{
+    content: "❖";
+    color: green;
+    margin-right: 40px;
+    width: 2px;
+    display: inline-block;
+  }
+
 /*
 :root{
 

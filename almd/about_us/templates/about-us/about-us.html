@@ -1,1 +1,89 @@
-<h1> who are we page</h1>
+{% extends 'base.html' %}
+
+{% block container %}
+{% include 'snippets/header.html'%}
+
+
+
+<!--Consult with senior to see if accordian would be right for this section-->
+
+<div class="container li-text-align pt-4">
+    <div class="row pt-4">
+        <div class="col-lg-8">
+            <div class="row">
+                <h4 class="text-left">Our Mission:</h4>
+                <p>To promote modern and sustainable agricultural land management practices in order to drive food
+                    security and to
+                    enhance rural development in accordance with government policy.
+                </p>
+            </div>
+            <div class="row">
+                <h4 class="text-left">Our Vision:</h4>
+                <p>The Agricultural Land Management Division (ALMD) will improve and maintain a database for the
+                    sustainable use of soils and agricultural lands.</p>
+            </div>
+            <div class="row">
+                <h4 class="text-left">About ALMD:</h4>
+                <p>The Agricultural Land Management Division (ALMD) is an integral part of the Technical Directorate
+                    within the Ministry of Agriculture (MOA). In November 2013, the division was renamed from the Rural
+                    Physical Planning Division (RPPD). Its primary objective is to provide expert advisory services on
+                    soil and agricultural land use management that aligns with government policies. By working closely
+                    with farmers and other stakeholders, the ALMD aims to enhance crop production while preserving and
+                    improving the quality of available soil resources. With this approach, the division strives to
+                    support sustainable agricultural practices that benefit both the environment and local
+                    communities.</p>
+                <p>The Division will undertake new and expanded programmes aimed at monitoring, investigation and
+                    research as well as advisory services to help farmers solve problems associated with low yields in
+                    crop production. ALMD Core Functions:</p>
+            </div>
+            <div class="row">
+                <ul>
+                    <li>Conducting soils and land cover/land use surveys</li>
+                    <li>Conducting rural land evaluation assessments and make recommendations on the use of agricultural
+                        lands
+                    </li>
+                    <li>Conducting land capability assessments</li>
+                    <li>Assessing soil fertility and make recommendations for soil and land management</li>
+                    <li>Conducting soil and soil amendment tests and making fertilizer recommendations to farmers and
+                        special interest groups
+                    </li>
+                    <li>Design and prepare maps</li>
+                    <li>GIS data processing, manipulation, analysis and output</li>
+                    <li>Capture spatial data through aerial photointerpretation, satellite imagery and global
+                        positioning systems
+                    </li>
+                    <li>Agricultural assessment of subdivision applications</li>
+                    <li>Chemical and physical analyses on growth media, chemical analyses on plant tissue and water
+                        samples
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <strong>Services:</strong>
+                <ul>
+                    <li>Land use monitoring and management (subdivision and quarry assessments)</li>
+                    <li>Soil health analysis (physical, chemical and biological components of the soil)</li>
+                    <li>Management of soil and water salinity</li>
+                    <li>Development and maintenance a soil and land use database</li>
+                    <li>Diagnosis and recommendation advisory services to farmers (soil, plant tissue, compost
+                        fertilizer and water samples)
+                    </li>
+                    <li>Training research and extension personnel on the use of soil information</li>
+                    <li>Assisting government and other agencies involved in Planning Process by providing advisory
+                        services on land-use and change of use
+                    </li>
+                    <li class="custom-text-align-left">Assisting with post disaster agricultural rehabilitation programme</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4">
+              <img src="/static/files/almd-department.png" alt="Picture 1" class="img-fluid pt-4">
+              <img src="/static/files/almd-department.png" alt="Picture 1" class="img-fluid pt-4">
+              <img src="/static/files/almd-department.png" alt="Picture 1" class="img-fluid pt-4">
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

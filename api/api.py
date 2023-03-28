@@ -3,26 +3,26 @@ from factory.factory import db
 from models.models import Article
 import requests
 import oci
-from  oci.object_storage import UploadManager
+# from oci.object_storage import UploadManager
 from oci.object_storage.models import CreateBucketDetails
 from oci.object_storage.transfer.constants import MEBIBYTE
 
-config = oci.config.from_file()
-compartment_id = config["tenancy"]
-object_storage = oci.object_storage.ObjectStorageClient(config)
-namespace = object_storage.get_namespace().data
-object_name = "sample object"
-part_size = 2 * MEBIBYTE  # part size (in bytes)
-
-
-# create example file to upload
-filename = 'multipart_object_content.txt'
-file_size_in_mebibytes = 10
-sample_content = b'a'
-with open(filename, 'wb') as f:
-    while f.tell() < MEBIBYTE * file_size_in_mebibytes:
-        f.write(sample_content * MEBIBYTE)
-
+#
+# config = oci.config.from_file()
+# compartment_id = config["tenancy"]
+# object_storage = oci.object_storage.ObjectStorageClient(config)
+# namespace = object_storage.get_namespace().data
+# object_name = "sample object" #test_bucket-0001
+# part_size = 2 * MEBIBYTE  # part size (in bytes)
+#
+#
+# # create example file to upload
+# filename = 'multipart_object_content.txt'
+# file_size_in_mebibytes = 10
+# sample_content = b'a'
+# with open(filename, 'wb') as f:
+#     while f.tell() < MEBIBYTE * file_size_in_mebibytes:
+#         f.write(sample_content * MEBIBYTE)
 
 
 def progress_callback(bytes_uploaded):
@@ -66,10 +66,11 @@ def create_article():
         
         upload_manager = UploadManager(object_storage, allow_parallel_uploads=True, parallel_process_count=3)
         response = upload_manager.upload_file(
-            namespace, bucket_name, object_name, filename, part_size=part_size, progress_callback=progress_callback)  
+                    namespace, bucket_name, object_name, filename, part_size=part_size, progress_callback=progress_callback
+        )
 
-        
-        
+        # obj = object_storage.put_object(namespace, etag, bucketname, image)
+
         return jsonify(
             respose={'success': 'successfully added new article'}), 200
     else:
@@ -121,7 +122,7 @@ def delete_article_by_id(id: int):
         if article:
             db.session.delete(article)
             db.session.commit()
-            return jsonify(response={'success': f'successfully deleted article with id:{article.id} '
+            return jsonify(response={'success': f'successfully deleted article with id:{article.id}'
                                                 f'from the article form the database'}), 200
         else:
             db.session.rollback()
