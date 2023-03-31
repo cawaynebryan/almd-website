@@ -2,7 +2,7 @@
 import boto3
 
 
-class FileHandler:
+class AWSFileHandler:
     def __init__(self, storage_bucket='almd-site'):
         self.storage_bucket = storage_bucket
 
@@ -37,9 +37,14 @@ class FileHandler:
         )
         return url
 
+    def put_object_from_file_stream(self,file_name, image_body):
+        s3 = boto3.client('s3')
+        bucket_name = self.storage_bucket
+        s3.put_object(Bucket=bucket_name, Key=file_name, Body=image_body)
 
-file_handler = FileHandler()
-x = file_handler.get_binary_file_url('Capture001.png')
+
+file_handler = AWSFileHandler()
+x = file_handler.get_binary_file_url('Capture002')
 print(x)
 
 

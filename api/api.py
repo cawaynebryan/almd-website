@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, request, flash
 
+
 from almd.forms.forms import CatalogueForm
+from .aws import AWSFileHandler
 from factory.factory import db
 from models.models import Article
 from datetime import date
@@ -46,22 +48,29 @@ def most_recent_article():
 @api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
     form = CatalogueForm(request.form)
-    if form:
-        if form.title.data:
-            new_article = Article(
-                title=form.title.data,
-                created=date.today(),
-                #picture=form.image.data.filename,
-                picture='Capture.png',
-                content=form.article.data
-            )
-            db.session.add(new_article)
-            db.session.commit()
-            return jsonify(response={'success': 'successfully added new article'}), 200
+    handler = AWSFileHandler()
+    image_file = request.files.get('image')
+    print('_______________________________________')
+    print(type(image_file))
+    if image_file:
+        #handler.put_object_from_file_stream(image_body=image_file)
+        if form:
+            if form.title.data:
+                new_article = Article(
+                    title=form.title.data,
+                    created=date.today(),
+                    picture=image_file.filename,
+                    content=form.article.data
+                )
+                db.session.add(new_article)
+                db.session.commit()
+                return jsonify(response={'success': 'successfully added new article'}), 200
+            else:
+                return jsonify(error={'failure': 'Title title field cannot be empty.'}), 404
         else:
-            return jsonify(error={'failure': 'Image field cannot be empty.'}), 404
+            return jsonify(error={'failure': 'Form data is invalid.'}), 404
     else:
-        return jsonify(error={'failure': 'Form data is invalid.'}), 404
+        return jsonify(error={'failure': 'No image file was provided.'}), 404
 
 
 @api_bp.route('/article/<int:id>')  # /article/jack-bauer --> update the article on jack-bauer
