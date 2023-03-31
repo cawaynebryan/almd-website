@@ -22,7 +22,9 @@
     padding-left: 10px;
  }
 
-.li-text-align li::before{
+
+
+.custom-bullet li::before{
     content: "❖";
     color: green;
     margin-right: 40px;

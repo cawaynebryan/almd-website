@@ -1,28 +1,16 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, flash
+
+from almd.forms.forms import CatalogueForm
 from factory.factory import db
 from models.models import Article
-import requests
-import oci
-# from oci.object_storage import UploadManager
-from oci.object_storage.models import CreateBucketDetails
-from oci.object_storage.transfer.constants import MEBIBYTE
+from datetime import date
+import os
+import boto3
+import botocore
 
-#
-# config = oci.config.from_file()
-# compartment_id = config["tenancy"]
-# object_storage = oci.object_storage.ObjectStorageClient(config)
-# namespace = object_storage.get_namespace().data
-# object_name = "sample object" #test_bucket-0001
-# part_size = 2 * MEBIBYTE  # part size (in bytes)
-#
-#
-# # create example file to upload
-# filename = 'multipart_object_content.txt'
-# file_size_in_mebibytes = 10
-# sample_content = b'a'
-# with open(filename, 'wb') as f:
-#     while f.tell() < MEBIBYTE * file_size_in_mebibytes:
-#         f.write(sample_content * MEBIBYTE)
+# aws_access_key = os.environ.get('AWS_ACCSES_KEY_ID')     # TODO: to be added to aws api calls
+# aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+BUCKET_NAME = os.environ.get('BUCKET_NAME')
 
 
 def progress_callback(bytes_uploaded):
@@ -57,24 +45,23 @@ def most_recent_article():
 
 @api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
-    bucket_name = 'test_bucket-0001'
-
-    new_article = Article(title='Web dev', picture='Cawayne', content='The brain behind this website')
-    if new_article:
-        db.session.add(new_article)
-        db.session.commit()
-        
-        upload_manager = UploadManager(object_storage, allow_parallel_uploads=True, parallel_process_count=3)
-        response = upload_manager.upload_file(
-                    namespace, bucket_name, object_name, filename, part_size=part_size, progress_callback=progress_callback
-        )
-
-        # obj = object_storage.put_object(namespace, etag, bucketname, image)
-
-        return jsonify(
-            respose={'success': 'successfully added new article'}), 200
+    form = CatalogueForm(request.form)
+    if form:
+        if form.title.data:
+            new_article = Article(
+                title=form.title.data,
+                created=date.today(),
+                #picture=form.image.data.filename,
+                picture='Capture.png',
+                content=form.article.data
+            )
+            db.session.add(new_article)
+            db.session.commit()
+            return jsonify(response={'success': 'successfully added new article'}), 200
+        else:
+            return jsonify(error={'failure': 'Image field cannot be empty.'}), 404
     else:
-        return jsonify(error={'failure': 'Something went wrong! could not create the article.'}), 404
+        return jsonify(error={'failure': 'Form data is invalid.'}), 404
 
 
 @api_bp.route('/article/<int:id>')  # /article/jack-bauer --> update the article on jack-bauer
@@ -129,3 +116,23 @@ def delete_article_by_id(id: int):
             return jsonify(error={"failure": "Sorry an article with that id was not found in the database."}), 404
     else:
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
+
+
+@api_bp.route('/image-server/<imageName>', methods=['GET', 'POST'])
+def get_image(imageName):
+    """Fetch Image from image server."""
+    print(imageName)
+    try:
+        s3 = boto3.client(
+            's3',
+            aws_access_key_id=os.environ.get('AWS_ACCSES_KEY_ID'),
+            aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
+        file = s3.get_object(Bucket=BUCKET_NAME, Key=imageName)
+        print("Getting aws file now")
+        return file['Body'].read()
+
+    except botocore.exceptions.ClientError as error:
+        flash(f'image {imageName} was not found')
+        print(f"file: {imageName} not found!")
+        print(f'The error is: {error}')
+    return "File Not Found"

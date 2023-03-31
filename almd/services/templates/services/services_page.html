@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<header>
+    {% include 'snippets/header.html'%}
+</header>
+
+<div class="container li-text-align ">
+    <div class="row">
+        <strong>Services:</strong>
+        <img src="{{url_for('api_bp.get_image', imageName='Capture001.png')}}" width="200" height="200"/>
+
+        <ul>
+            <li>Land use monitoring and management (subdivision and quarry assessments)</li>
+            <li>Soil health analysis (physical, chemical and biological components of the soil)</li>
+            <li>Management of soil and water salinity</li>
+            <li>Development and maintenance a soil and land use database</li>
+            <li>Diagnosis and recommendation advisory services to farmers (soil, plant tissue, compost
+                fertilizer and water samples)
+            </li>
+            <li>Training research and extension personnel on the use of soil information</li>
+            <li>Assisting government and other agencies involved in Planning Process by providing advisory
+                services on land-use and change of use
+            </li>
+            <li class="custom-text-align-left">Assisting with post disaster agricultural rehabilitation programme</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    {% include 'snippets/footer.html'%}
+</footer>
+{% endblock%}

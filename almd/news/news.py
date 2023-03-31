@@ -1,10 +1,12 @@
-from flask import current_app
+from flask import current_app, flash
 from flask import Blueprint, render_template, redirect, url_for
 from factory.factory import db
 from werkzeug.utils import secure_filename
 from almd.forms.forms import CatalogueForm
 from flask_login import login_required
 from models.models import Article
+import requests
+
 
 
 from datetime import date
@@ -32,35 +34,21 @@ def news_catalogue():
     return render_template('/news/news_page.html', articles=articles.json())
 
 
-ADDRESS = 'http://127.0.0.1'
-PORT = 5000
-
-
 @news_bp.route('/update', methods=['GET', 'POST'])
 @login_required
 def news_catalogue_update():
-
     form = CatalogueForm()
-    if form.validate_on_submit():   # check and validate form data
+    if form.validate_on_submit():  # check and validate form data
+        url = url_for('api_bp.create_article', _external=True)
 
-        file = form.image.data
-        file.save(
-            os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                         current_app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
-        )  # Generate path to the news static/image folder
-
-        new_article = Article(
-            title=form.title.data,
-            created=date.today(),
-            picture=form.image.data.filename,
-            content=form.article.data
-        )
-        db.session.add(new_article)
-        db.session.commit()
-
-        return redirect(url_for('home_page'))
-
+        response = requests.post(url, data=form.data)
+        if response.status_code == 200:
+            flash('Article created successfully!', 'success')
+            return redirect(url_for('home_page'))
+        else:
+            flash('Could not create article.', 'error')
     return render_template('/news/news_page_update.html', form=form)
+
 
 
 #  ###################################################### NEWS  ########################################################
