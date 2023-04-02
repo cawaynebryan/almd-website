@@ -41,13 +41,27 @@ def news_catalogue_update():
     if form.validate_on_submit():  # check and validate form data
         url = url_for('api_bp.create_article', _external=True)
 
-        response = requests.post(url, data=form.data)
+        # create a dictionary containing both file and non-file data
+        data = {
+            'title': form.title.data,
+            'article': form.article.data,
+        }
+
+        # check if a file was uploaded and add it to the data dictionary
+        if form.image.data:
+            data['image'] = (form.image.data.filename, form.image.data.stream, form.image.data.mimetype)
+
+        # pass the data dictionary to requests.post()
+        response = requests.post(url, data=data)
+
         if response.status_code == 200:
             flash('Article created successfully!', 'success')
             return redirect(url_for('home_page'))
         else:
             flash('Could not create article.', 'error')
+
     return render_template('/news/news_page_update.html', form=form)
+
 
 
 

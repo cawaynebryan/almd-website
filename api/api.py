@@ -49,17 +49,18 @@ def most_recent_article():
 def create_article():
     form = CatalogueForm(request.form)
     handler = AWSFileHandler()
-    image_file = request.files.get('image')
+    image_file = request.form.get('Image')
+    print(type(form.data))
     print('_______________________________________')
-    print(type(image_file))
+    print(image_file)
     if image_file:
-        #handler.put_object_from_file_stream(image_body=image_file)
+        #handler.put_object_from_file_stream(file_name='image.png', image_body=image_file)
         if form:
             if form.title.data:
                 new_article = Article(
                     title=form.title.data,
                     created=date.today(),
-                    picture=image_file.filename,
+                    picture='Capture001.ipg',
                     content=form.article.data
                 )
                 db.session.add(new_article)
@@ -136,12 +137,12 @@ def get_image(imageName):
             's3',
             aws_access_key_id=os.environ.get('AWS_ACCSES_KEY_ID'),
             aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
-        file = s3.get_object(Bucket=BUCKET_NAME, Key=imageName)
-        print("Getting aws file now")
-        return file['Body'].read()
+        s3_object = s3.put_object(Bucket=BUCKET_NAME, key='encrypt-key', body=imageName)
+        return s3_object['Body'].read()
 
     except botocore.exceptions.ClientError as error:
         flash(f'image {imageName} was not found')
         print(f"file: {imageName} not found!")
         print(f'The error is: {error}')
-    return "File Not Found"
+        return "File Not Found"
+

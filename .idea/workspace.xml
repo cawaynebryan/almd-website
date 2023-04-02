@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Update api call to store data to database">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="aded s3 capability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680300003823</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="aded s3 capability">
+      <created>1680306842744</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680306842744</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,6 +323,7 @@
     <MESSAGE value="add footer to website" />
     <MESSAGE value="Add about us page" />
     <MESSAGE value="Update api call to store data to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update api call to store data to database" />
+    <MESSAGE value="aded s3 capability" />
+    <option name="LAST_COMMIT_MESSAGE" value="aded s3 capability" />
   </component>
 </project>
