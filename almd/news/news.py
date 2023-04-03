@@ -42,17 +42,18 @@ def news_catalogue_update():
         url = url_for('api_bp.create_article', _external=True)
 
         # create a dictionary containing both file and non-file data
-        data = {
+        cont = {
             'title': form.title.data,
             'article': form.article.data,
         }
 
-        # check if a file was uploaded and add it to the data dictionary
+        # check if a file was uploaded and add it to the files dictionary
+        files = {}
         if form.image.data:
-            data['image'] = (form.image.data.filename, form.image.data.stream, form.image.data.mimetype)
+            files['image'] = (form.image.data.filename, form.image.data.stream, form.image.data.mimetype)
 
         # pass the data dictionary to requests.post()
-        response = requests.post(url, data=data)
+        response = requests.post(url, data=cont, files=files)
 
         if response.status_code == 200:
             flash('Article created successfully!', 'success')

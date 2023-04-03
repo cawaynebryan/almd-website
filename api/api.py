@@ -10,8 +10,8 @@ import os
 import boto3
 import botocore
 
-# aws_access_key = os.environ.get('AWS_ACCSES_KEY_ID')     # TODO: to be added to aws api calls
-# aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+aws_access_key = os.environ.get('AWS_ACCSES_KEY_ID')     # TODO: to be added to aws api calls
+aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
 BUCKET_NAME = os.environ.get('BUCKET_NAME')
 
 
@@ -47,21 +47,28 @@ def most_recent_article():
 
 @api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
-    form = CatalogueForm(request.form)
+    form = CatalogueForm()
     handler = AWSFileHandler()
-    image_file = request.form.get('Image')
-    print(type(form.data))
-    print('_______________________________________')
-    print(image_file)
+    # File  request for image data
+    image_data = request.files['image']
+    image_file = image_data.stream.read()
+    image_name = image_data.filename
+
+    # Data request for article content
+    article_data = request.values.to_dict()
+    article_title = article_data['title']
+    article_content = article_data['article']
+
+    print("__________________________")
     if image_file:
-        #handler.put_object_from_file_stream(file_name='image.png', image_body=image_file)
+        handler.put_object_from_file_stream(file_name=image_name, image_body=image_file)
         if form:
             if form.title.data:
                 new_article = Article(
-                    title=form.title.data,
+                    title=article_title,
                     created=date.today(),
-                    picture='Capture001.ipg',
-                    content=form.article.data
+                    picture=image_name,
+                    content=article_content
                 )
                 db.session.add(new_article)
                 db.session.commit()
