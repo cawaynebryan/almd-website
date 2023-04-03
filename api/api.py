@@ -58,6 +58,7 @@ def create_article():
     article_data = request.values.to_dict()
     article_title = article_data['title']
     article_content = article_data['article']
+    print(type(request.data))
 
     print("__________________________")
     if image_file:
