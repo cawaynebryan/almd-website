@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="fix bug with api">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="fix s3 to upload image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680536683945</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix s3 to upload image">
+      <created>1680559170026</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680559170026</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +335,7 @@
     <MESSAGE value="Update api call to store data to database" />
     <MESSAGE value="aded s3 capability" />
     <MESSAGE value="fix bug with api" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug with api" />
+    <MESSAGE value="fix s3 to upload image" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix s3 to upload image" />
   </component>
 </project>
