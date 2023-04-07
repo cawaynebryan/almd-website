@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="fix article catalogue to work with s3 - tem-office">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="modify all articles page and route article and static image to appropriate folder in s3 bucket">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
@@ -31,19 +29,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/almd/contact_us/contact_us.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/almd/forms/forms.py">
-      <ranges>
-        <range start1="3" end1="4" start2="3" end2="5" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="16" end1="17" start2="17" end2="18" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
-        <range start1="22" end1="23" start2="23" end2="24" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
-        <range start1="27" end1="30" start2="28" end2="31" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/api/api.py">
       <ranges>
         <range start1="12" end1="13" start2="12" end2="13" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
@@ -280,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680824994509</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="modify all articles page and route article and static image to appropriate folder in s3 bucket">
+      <created>1680829369408</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680829369408</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,6 +302,7 @@
     <MESSAGE value="add formfield and contact information to contact form" />
     <MESSAGE value="restructure misplaced form to correct location" />
     <MESSAGE value="fix article catalogue to work with s3 - tem-office" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix article catalogue to work with s3 - tem-office" />
+    <MESSAGE value="modify all articles page and route article and static image to appropriate folder in s3 bucket" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify all articles page and route article and static image to appropriate folder in s3 bucket" />
   </component>
 </project>

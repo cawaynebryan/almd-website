@@ -46,7 +46,6 @@ def login():
 
 @auth_bp.route('/register', methods=['POST', 'GET'])
 def register():
-
     form = RegisterForm()
 
     if form.validate_on_submit():

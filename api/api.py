@@ -10,7 +10,7 @@ import os
 import boto3
 import botocore
 
-aws_access_key = os.environ.get('AWS_ACCSES_KEY_ID')     # TODO: to be added to aws api calls
+aws_access_key = os.environ.get('AWS_ACCESS_KEY_ID')     # TODO: to be added to aws api calls
 aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
 BUCKET_NAME = os.environ.get('BUCKET_NAME')
 
@@ -25,8 +25,13 @@ API_KEY_ = 'topsecretapikey'
 
 @api_bp.route('/articles')  # /article --> fetch all article
 def get_all_article_from_catalogue():
-    articles = db.session.query(Article).all()
-    print(type(articles))
+    articles = []
+    endpoint_name = request.args.get('endpoint_name')
+    if endpoint_name == 'news_catalogue':
+        articles = db.session.query(Article).all()
+    elif endpoint_name == 'event_catalogue':
+        pass
+        # articles = db.session.query(Events).all()
     return jsonify(articles=[article.to_dict() for article in articles])
 
 
@@ -64,7 +69,7 @@ def create_article():
     if image_file:
         handler.put_object_from_file_stream(file_name=image_name, image_body=image_file)
         if form:
-            if form.title.data:
+            if form.title.data: #TODO: Edit to remove erelevand data
                 new_article = Article(
                     title=article_title,
                     created=date.today(),
@@ -143,9 +148,9 @@ def get_image(imageName):
     try:
         s3 = boto3.client(
             's3',
-            aws_access_key_id=os.environ.get('AWS_ACCSES_KEY_ID'),
+            aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'),
             aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
-        s3_object = s3.put_object(Bucket=BUCKET_NAME, key='encrypt-key', body=imageName)
+        s3_object = s3.get_object(Bucket=BUCKET_NAME, Key=f'Static/{imageName}')
         return s3_object['Body'].read()
 
     except botocore.exceptions.ClientError as error:

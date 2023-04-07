@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_ckeditor import CKEditor
+
 from flask_login import LoginManager
 from models.models import Admin
 import os
@@ -12,6 +13,7 @@ from almd.about_us.about_us import about_bp
 from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 from almd.services.services import services_bp
+from flask_bootstrap import Bootstrap
 
 
 load_dotenv()
@@ -25,6 +27,7 @@ app.config['UPLOAD_FOLDER'] = 'static/images'  # configure static files url for 
 
 app.register_blueprint(auth_bp, url_prefix='/login')
 app.register_blueprint(about_bp, url_prefix='/about')
+#app.register_blueprint(auth_bp, url_prefix='/register')
 app.register_blueprint(contact_bp, url_prefix='/contact')
 app.register_blueprint(news_bp, url_prefix='/news')
 app.register_blueprint(resources_bp, url_prefix='/resources')
@@ -32,8 +35,11 @@ app.register_blueprint(services_bp, url_prefix='/services')
 app.register_blueprint(api_bp, url_prefix='/api')
 
 db.init_app(app)  # Bind database to current flask app
-
-ckeditor = CKEditor(app)  # instantiate CKEditor onto the flask app
+ckeditor = CKEditor(app) # instantiate CKEditor onto the flask app
+#Bootstrap(app)
+# app.config['CKEDITOR_HEIGHT'] = 1000
+# app.config['CKEDITOR_WDITH'] = 400
+#app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth_bp.login'

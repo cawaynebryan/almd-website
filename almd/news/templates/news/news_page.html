@@ -4,38 +4,39 @@
 {% include 'snippets/header.html'%}
 
 <body>
-
-<div class="container-fluid">
-
-    <div class="row">
-
-        <div class="col-sm-6 col-md-4">
-            {% for article in articles['articles'] %}
-            <div class="card">
-                <div class="card-header">
-                    <h5>{{ article['title'] }}</h5>
-                </div>
-                {% if article['picture'] %}
-                <img src="{{ url_for('api_bp.get_image_articles', imageName=article['picture']) }}" height="120px"
-                     width="120px" alt="{{ article['picture'] }}">
+<div class="container pt-4">
+<div class="row">
+     {% for article in articles['articles'] %}
+     <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card mb-5 shadow-sm">
+             {% if article['picture'] %}
+                <img src="{{ url_for('api_bp.get_image_articles', imageName=article['picture']) }}" height="200px"
+                     width="100%" alt="{{ article['picture'] }}">
                 {% else %}
-                <img src="#" height="120px" width="120px" alt="{{ article['picture'] }}">
+                <img src="#" height="200px" width="100%" alt="{{ article['picture'] }}">
                 {% endif %}
-                <div class="card-body">
-                    <p class="card-text">
-                        {{article['content']|safe}}
-                    </p>
+            <div class="card-body">
+                <div class="card-title">
+                    <p><strong><em>{{ article['title'] }}</em></strong></p>
                 </div>
+                <div class="card-text">
+                        {%if article['content']|length > 50%}
+                        {{article['content'][:50]|safe}}
+                        {% else %}
+                        {{article['content']|safe}}
+                        {%endif%}
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-success rounded-0 float-end"
+                >Read More</a
+                >
             </div>
-            {% endfor %}
-        </div>
-    </div>
-
+          </div>
+     </div>
+    {% endfor %}
 </div>
 
-
+</div>
 </body>
 
 {% endblock%}
-
 
