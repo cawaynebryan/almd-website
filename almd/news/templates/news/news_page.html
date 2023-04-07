@@ -1,20 +1,41 @@
-
-
-
 {% extends 'base.html' %}
 
 {% block container %}
 {% include 'snippets/header.html'%}
 
 <body>
-    <h1>This is the news page of our website</h1>
-    {% for article in articles['articles'] %}
-    {{ article['picture'] }}
-    <h3>{{article['content'] |safe}}</h3>
-     <br>
-         <img src="{{ url_for('news_bp.static', filename = 'images/'+ article['picture']) }}" height="638px" width="669px" alt="">
-      <br>
-     {% endfor %}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6 col-md-4">
+            {% for article in articles['articles'] %}
+            <div class="card">
+                <div class="card-header">
+                    <h5>{{ article['title'] }}</h5>
+                </div>
+                {% if article['picture'] %}
+                <img src="{{ url_for('api_bp.get_image_articles', imageName=article['picture']) }}" height="120px"
+                     width="120px" alt="{{ article['picture'] }}">
+                {% else %}
+                <img src="#" height="120px" width="120px" alt="{{ article['picture'] }}">
+                {% endif %}
+                <div class="card-body">
+                    <p class="card-text">
+                        {{article['content']|safe}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 
 {% endblock%}
+
+

@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DateField, TextAreaField, FileField, PasswordField
 from wtforms.validators import InputRequired, Email, DataRequired
-from flask_ckeditor import CKEditorField
+from flask_ckeditor.fields import CKEditorField
+from flask import current_app
 
 
 class CatalogueForm(FlaskForm):
@@ -25,6 +26,6 @@ class LoginForm(FlaskForm):
 
 
 class ContactForm(FlaskForm):
-    name = StringField(label='Name', validators=[DataRequired()])
-    email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
-    message = TextAreaField(label='Message', render_kw={"rows": 10, "cols": 70}, validators=[DataRequired()])
+    name = StringField(label='Name', validators=[InputRequired()])
+    email = StringField(label='Email', validators=[InputRequired(), Email(granular_message=True)])
+    message = TextAreaField(label='Message', render_kw={"rows": 10, "cols": 70}, validators=[InputRequired()])

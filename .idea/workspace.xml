@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="fix article catalogue to work with s3 - tem-office">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
+    </list>
+    <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
+      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -26,6 +34,28 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/almd/contact_us/contact_us.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/almd/forms/forms.py">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="5" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="16" end1="17" start2="17" end2="18" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="22" end1="23" start2="23" end2="24" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="27" end1="30" start2="28" end2="31" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/api/api.py">
+      <ranges>
+        <range start1="12" end1="13" start2="12" end2="13" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="27" end1="29" start2="27" end2="34" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="64" end1="65" start2="69" end2="70" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="66" end1="67" start2="71" end2="72" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="138" end1="140" start2="143" end2="145" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="145" end1="146" start2="150" end2="151" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="147" end1="148" start2="152" end2="153" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="156" end1="156" start2="161" end2="179" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -243,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675355594794</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix article catalogue to work with s3 - tem-office">
+      <created>1680824994509</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680824994509</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
