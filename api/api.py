@@ -35,6 +35,16 @@ def get_all_article_from_catalogue():
     return jsonify(articles=[article.to_dict() for article in articles])
 
 
+@api_bp.route('/articles/recent')
+def get_first_two_articles_from_catalogue():
+    articles = db.session.query(Article).limit(2).all()
+    if articles:
+        return jsonify(articles=[article.to_dict() for article in articles])
+    else:
+        return jsonify(error={'failure': 'Something went wrong! could not fetch the targeted article.'}), 404
+
+
+
 @api_bp.route('/article/<int:id>')  # /article/jack-bauer --> fetch the article on jack-bauer
 def get_article_by_id(id: int):
     article = db.get_or_404(Article, id)

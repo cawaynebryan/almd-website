@@ -2,6 +2,7 @@ from flask import flash
 from flask import Blueprint, render_template, redirect, url_for
 from almd.forms.forms import CatalogueForm
 from flask_login import login_required
+import json
 import requests
 import os
 
@@ -16,6 +17,7 @@ news_bp = Blueprint(
 
 
 # ################################################## NEWS  #############################################################
+
 
 @news_bp.route('/')
 def news_catalogue():
@@ -48,6 +50,17 @@ def news_catalogue_update():
 
 
 #  ###################################################### NEWS  ########################################################
+
+@news_bp.route('/article/<int:article_id>')  # request individual article by id from api
+def git_individual_article_by_id(article_id):
+    # get recent article
+    frequent_article_url = url_for('api_bp.get_first_two_articles_from_catalogue', _external=True)
+    frequent_article = requests.get(frequent_article_url)
+
+    url = url_for('api_bp.get_article_by_id', id=article_id, _external=True)
+    response = requests.get(url)
+    return render_template('news/news_article.html', article=response.json()['article'],
+                           latest_news=frequent_article.json()['articles'])
 
 
 @news_bp.route('/events')
