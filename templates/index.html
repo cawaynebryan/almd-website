@@ -118,59 +118,39 @@
 
     <!--    Latest news section-->
 
-    <!-- Our service section which is made up of three cards -->
     <div class="service-section section-padding">
         <h1> Latest News</h1>
         <div class="container">
             <div class="row ">
 
+
+                {% for article in articles['articles'] %}
                 <div class="col">
                     <div class="card">
-                        <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
+                        {% if article['picture'] %}
+                        <img src="{{ url_for('api_bp.get_image_articles', imageName=article['picture']) }}"
+                             height="200px"
+                             width="100%" alt="{{ article['picture'] }}">
+                        {% else %}
+                        <img src="#" height="200px" width="100%" alt="{{ article['picture'] }}">
+                        {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">News Title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
+                            <h5 class="card-title text-left">{{ article['title']}}</h5>
+                            <p class="card-text text-left">
+                                {%if article['content']|length > 50%}
+                                {{article['content'][:50]|safe}}
+                                {% else %}
+                                {{article['content']|safe}}
+                                {%endif%}
+                            </p>
                         </div>
+                        <a href="{{ url_for('news_bp.git_individual_article_by_id', article_id=article['id']) }}"
+                           class="btn btn-sm btn-outline-success rounded-0 float-end d-inline-block"
+                        >Read More</a>
                     </div>
                 </div>
+                {% endfor %}
 
-                <div class="col ">
-                    <div class="card">
-                        <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">News Title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col ">
-                    <div class="card">
-                        <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">News Title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col ">
-                    <div class="card">
-                        <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">News Title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
-                    </div>
-                </div>
 
             </div> <!--end of card row-->
         </div>

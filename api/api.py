@@ -14,6 +14,8 @@ aws_access_key = os.environ.get('AWS_ACCESS_KEY_ID')     # TODO: to be added to 
 aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
 BUCKET_NAME = os.environ.get('BUCKET_NAME')
 
+s3_handler = AWSFileHandler()
+
 
 def progress_callback(bytes_uploaded):
     print("{} additional bytes uploaded".format(bytes_uploaded))
@@ -23,7 +25,7 @@ api_bp = Blueprint('api_bp', __name__, url_prefix='')
 API_KEY_ = 'topsecretapikey'
 
 
-@api_bp.route('/articles')  # /article --> fetch all article
+@api_bp.route('/articles')  # /article --> fetch all article base on endpoint name
 def get_all_article_from_catalogue():
     articles = []
     endpoint_name = request.args.get('endpoint_name')
@@ -36,13 +38,12 @@ def get_all_article_from_catalogue():
 
 
 @api_bp.route('/articles/recent')
-def get_first_two_articles_from_catalogue():
-    articles = db.session.query(Article).limit(2).all()
+def get_first_four_articles_from_catalogue():
+    articles = db.session.query(Article).order_by(Article.created.desc()).limit(4).all()
     if articles:
         return jsonify(articles=[article.to_dict() for article in articles])
     else:
         return jsonify(error={'failure': 'Something went wrong! could not fetch the targeted article.'}), 404
-
 
 
 @api_bp.route('/article/<int:id>')  # /article/jack-bauer --> fetch the article on jack-bauer
@@ -54,16 +55,10 @@ def get_article_by_id(id: int):
         return jsonify(error={'failure': 'Something went wrong! could not fetch the targeted article.'}), 404
 
 
-@api_bp.route('/recent')  # Query for the most recent article
-def most_recent_article():
-    recent_article = db.session.query(Article)[-5:]  # slicing is used to return the last five element in the list
-    return jsonify(article=[articles.to_dict() for articles in recent_article]), 200
-
-
 @api_bp.route('/article', methods=['POST'])  # /article --> create one new article
 def create_article():
     form = CatalogueForm()
-    handler = AWSFileHandler()
+
     # File  request for image data
     image_data = request.files['image']
     image_file = image_data.stream.read()
@@ -120,7 +115,11 @@ def replace_article_by_id(id: int):
 def delete_article_catalogue():
     api_key = request.args.get('api-key')
     if api_key == API_KEY_:
+        query = db.session.query(Article.picture).all()
+        for picture in query:
+            s3_handler.delete_binary_file(picture[0])
         num_rows_deleted = db.session.query(Article).delete()
+
         if num_rows_deleted:
             print(f"The total number of rows delete: {num_rows_deleted}")
             db.session.commit()
@@ -142,6 +141,9 @@ def delete_article_by_id(id: int):
         if article:
             db.session.delete(article)
             db.session.commit()
+            s3_handler.delete_binary_file(article.picture)
+            print(article.picture)
+            print(type(article.picture))
             return jsonify(response={'success': f'successfully deleted article with id:{article.id}'
                                                 f'from the article form the database'}), 200
         else:

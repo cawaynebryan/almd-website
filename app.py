@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from flask_ckeditor import CKEditor
 
 from flask_login import LoginManager
@@ -14,6 +14,7 @@ from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 from almd.services.services import services_bp
 from flask_bootstrap import Bootstrap
+import requests
 
 
 load_dotenv()
@@ -63,8 +64,9 @@ with app.app_context():  # Create database with context manager if not exist
 
 @app.route('/')
 def home_page():
-    # response = requests.get(HOST_AND_PORT + '/article')
-    return render_template('index.html')
+    response = requests.get(url_for('api_bp.get_first_four_articles_from_catalogue', _external=True))
+    article = response.json()
+    return render_template('index.html', articles=article)
 
 
 if __name__ == '__main__':
