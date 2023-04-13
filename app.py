@@ -10,6 +10,7 @@ from auth.auth import auth_bp
 from api.api import api_bp
 from almd.news.news import news_bp
 from almd.about_us.about_us import about_bp
+from almd.laboratory.laboratory import lab_bp
 from almd.resources.resources import resources_bp
 from almd.contact_us.contact_us import contact_bp
 from almd.services.services import services_bp
@@ -34,9 +35,10 @@ app.register_blueprint(news_bp, url_prefix='/news')
 app.register_blueprint(resources_bp, url_prefix='/resources')
 app.register_blueprint(services_bp, url_prefix='/services')
 app.register_blueprint(api_bp, url_prefix='/api')
+app.register_blueprint(lab_bp, url_prefix='/laboratory')
 
 db.init_app(app)  # Bind database to current flask app
-ckeditor = CKEditor(app) # instantiate CKEditor onto the flask app
+ckeditor = CKEditor(app)  # instantiate CKEditor onto the flask app
 #Bootstrap(app)
 # app.config['CKEDITOR_HEIGHT'] = 1000
 # app.config['CKEDITOR_WDITH'] = 400

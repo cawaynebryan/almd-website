@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add page for viewing single article">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add dynamic news content to homepage">
+      <change afterPath="$PROJECT_DIR$/almd/laboratory/laboratory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_catalogue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/stylesStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/stylesStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snippets/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
     </list>
     <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
@@ -39,24 +33,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/almd/contact_us/contact_us.py" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/api/api.py">
-      <ranges>
-        <range start1="15" end1="15" start2="15" end2="17" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="25" end1="26" start2="27" end2="28" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="38" end1="40" start2="40" end2="42" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="45" end1="46" start2="47" end2="47" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="54" end1="60" start2="55" end2="55" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="65" end1="66" start2="60" end2="61" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="79" end1="80" start2="74" end2="75" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
-        <range start1="122" end1="122" start2="117" end2="120" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="123" end1="123" start2="121" end2="122" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="144" end1="144" start2="143" end2="146" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
-        <range start1="153" end1="155" start2="155" end2="157" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
-        <range start1="172" end1="172" start2="174" end2="192" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -302,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681255949386</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add dynamic news content to homepage">
+      <created>1681339066640</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681339066640</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +312,7 @@
     <MESSAGE value="modify all articles page and route article and static image to appropriate folder in s3 bucket" />
     <MESSAGE value="implement image gallery with fix length sub text" />
     <MESSAGE value="add page for viewing single article" />
-    <option name="LAST_COMMIT_MESSAGE" value="add page for viewing single article" />
+    <MESSAGE value="add dynamic news content to homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dynamic news content to homepage" />
   </component>
 </project>
