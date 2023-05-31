@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add dynamic news content to homepage">
-      <change afterPath="$PROJECT_DIR$/almd/laboratory/laboratory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" afterDir="false" />
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add page for laboratory content">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snippets/products-carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/products-carousel.html" afterDir="false" />
     </list>
     <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
       <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
@@ -33,6 +34,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/almd/contact_us/contact_us.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/api/api.py">
+      <ranges>
+        <range start1="1" end1="3" start2="1" end2="1" changelist="f1c40112-6bc6-4668-8537-5b9316edcc4c" />
+        <range start1="74" end1="75" start2="72" end2="73" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="155" end1="157" start2="153" end2="155" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+        <range start1="174" end1="174" start2="172" end2="190" changelist="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -285,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681339066640</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add page for laboratory content">
+      <created>1681413736259</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413736259</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,6 +331,7 @@
     <MESSAGE value="implement image gallery with fix length sub text" />
     <MESSAGE value="add page for viewing single article" />
     <MESSAGE value="add dynamic news content to homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dynamic news content to homepage" />
+    <MESSAGE value="add page for laboratory content" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page for laboratory content" />
   </component>
 </project>

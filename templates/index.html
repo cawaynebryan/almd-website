@@ -9,6 +9,12 @@
         {% include 'snippets/header.html'%}
     </header>
     <video src="/static/files/landscape_video.mp4" muted loop autoplay></video>
+
+    <div class="showcase-text bg-dark opacity-50">
+        <h1 class="showcase-header">Agricultural Land Management Division</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, assumenda cum cumque cupiditate debitis dolorem eos explicabo</p>
+
+    </div>
 </section>
 
 
@@ -16,13 +22,18 @@
 
 
     <div class="our-agency-section section-padding">
-        <h1 class="section-title"> Our Agency</h1>
-        <p style="width:60%;  margin: auto; ">laoreet suspendisse interdum consectetur libero id faucibus
+
+        <div class="container mb-5">
+            <h1 class="section-title"> Our Agency</h1>
+            <p style="width:60%;  margin: auto; ">laoreet suspendisse interdum consectetur libero id faucibus
             nisl tincidunt eget nullam non nisi est sit amet
             facilisis magna etiam tempor orci
             eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus
             elementum sagittis</p>
-        <div class="container m-5">
+        </div>
+
+
+        <div class="container mb-5">
             <div class="row">
                 <div class="col">
                     <h2>Welcome to the agricultural land management division</h2>
@@ -30,7 +41,7 @@
                         within the Ministry of Agriculture (MOA). In November 2013, the division was renamed from the
                         Rural Physical Planning Division (RPPD). Its primary objective is to provide expert advisory
                         services on soil and agricultural land use management....</p>
-                    <button type="button" class="btn btn-success">Read More</button>
+                    <button type="button" class="btn btn-sm btn-success">Read More</button>
                 </div>
                 <div class="col">
                     <img class="main-info-image" src="/static/files/almd-department.png"/>
@@ -40,9 +51,8 @@
         </div>
     </div>
 
-
-    <div class="soils-day-section section-padding">
-        <div class="container">
+    <div class="container mb-4">
+    <div class="soils-day-section section-padding p-3">
             <div class="row">
                 <div class="col">
                     <img class="main-info-image" src="/static/files/almd-department.png">
@@ -57,7 +67,7 @@
                         December 2022. The venue for the NFC was
                         Jamaica Conference Center, 14-20 Port Royal Street, Kingston View Details
                     </p>
-                    <button type="button" class="btn btn-success"> Read More</button>
+                    <button type="button" class="btn btn-sm btn-success"> Read More</button>
                 </div>
             </div>
 
@@ -65,8 +75,9 @@
 
     </div>
 
+
     <!-- Our service section which is made up of three cards -->
-    <div class="service-section section-padding">
+    <div class="service-section section-padding mb-4">
         <h1> Our Services</h1>
         <div class="container">
             <div class="row ">
@@ -95,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="col  ">
+                <div class="col">
                     <div class="card">
                         <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
                         <div class="card-body">
@@ -118,19 +129,17 @@
 
     <!--    Latest news section-->
 
-    <div class="service-section section-padding">
+    <div class="news-section section-padding mb-4">
         <h1> Latest News</h1>
         <div class="container">
-            <div class="row ">
-
-
+            <div class="row">
                 {% for article in articles['articles'] %}
                 <div class="col">
                     <div class="card">
                         {% if article['picture'] %}
                         <img src="{{ url_for('api_bp.get_image_articles', imageName=article['picture']) }}"
                              height="200px"
-                             width="100%" alt="{{ article['picture'] }}">
+                             width="100%" alt="{{ article['picture'] }}" class="card-img-top">
                         {% else %}
                         <img src="#" height="200px" width="100%" alt="{{ article['picture'] }}">
                         {% endif %}
@@ -145,7 +154,7 @@
                             </p>
                         </div>
                         <a href="{{ url_for('news_bp.git_individual_article_by_id', article_id=article['id']) }}"
-                           class="btn btn-sm btn-outline-success rounded-0 float-end d-inline-block"
+                           class="btn btn-sm btn-outline-success rounded-1 float-end"
                         >Read More</a>
                     </div>
                 </div>

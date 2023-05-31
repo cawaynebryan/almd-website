@@ -1,6 +1,4 @@
 from flask import Blueprint, jsonify, request, flash
-
-
 from almd.forms.forms import CatalogueForm
 from .aws import AWSFileHandler
 from factory.factory import db
