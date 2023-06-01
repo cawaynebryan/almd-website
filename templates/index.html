@@ -4,15 +4,18 @@
 {% block container %}
 
 
-<section class="showcase">
+<section class="showcase mb-4">
     <header>
         {% include 'snippets/header.html'%}
     </header>
     <video src="/static/files/landscape_video.mp4" muted loop autoplay></video>
 
-    <div class="showcase-text bg-dark opacity-50">
+    <div class="showcase-text bg-dark opacity-75">
         <h1 class="showcase-header">Agricultural Land Management Division</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, assumenda cum cumque cupiditate debitis dolorem eos explicabo</p>
+        <p>Lorem ipsum dolor sit amet, consectetur assumenda cum cumque cupiditate debitis
+            dolorem eos explicabo Lorem ipsum dolor sit amet, umque, delectus ducimus ea error exercitationem facere facilis fugiat iusto
+            optio reiciendis similique vero?</p>
+        <button type="button" class="btn btn-sm btn-success">Read More</button>
 
     </div>
 </section>
@@ -24,7 +27,7 @@
     <div class="our-agency-section section-padding">
 
         <div class="container mb-5">
-            <h1 class="section-title"> Our Agency</h1>
+            <h1 class="section-title text-center"> Our Agency</h1>
             <p style="width:60%;  margin: auto; ">laoreet suspendisse interdum consectetur libero id faucibus
             nisl tincidunt eget nullam non nisi est sit amet
             facilisis magna etiam tempor orci
@@ -59,7 +62,7 @@
                     <!--TODO: image should be replaced -->
                 </div>
                 <div class="col">
-                    <h1>World Soils Day</h1>
+                    <h2>World Soils Day</h2>
                     <p>As part of the EU-funded project support to increase productivity and growth in the Forest Sector
                         of
                         Jamaica, the Forestry
@@ -78,10 +81,9 @@
 
     <!-- Our service section which is made up of three cards -->
     <div class="service-section section-padding mb-4">
-        <h1> Our Services</h1>
         <div class="container">
+            <h2> Our Services</h2>
             <div class="row ">
-
                 <div class="col">
                     <div class="card">
                         <img class="card-img-top" src="/static/files/almd-department.png" alt="Card image cap">
@@ -130,8 +132,8 @@
     <!--    Latest news section-->
 
     <div class="news-section section-padding mb-4">
-        <h1> Latest News</h1>
         <div class="container">
+             <h2> Latest News</h2>
             <div class="row">
                 {% for article in articles['articles'] %}
                 <div class="col">
