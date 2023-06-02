@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Added welcome content over the showcase video">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Complete showcase design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/stylesStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/stylesStyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snippets/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
     </list>
     <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
       <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
@@ -29,7 +35,7 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/almd/about_us/templates/about-us/about-us.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/almd/contact_us/contact_us.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -297,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685571369218</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Complete showcase design">
+      <created>1685659591803</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685659591803</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,6 +340,7 @@
     <MESSAGE value="add dynamic news content to homepage" />
     <MESSAGE value="add page for laboratory content" />
     <MESSAGE value="Added welcome content over the showcase video" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added welcome content over the showcase video" />
+    <MESSAGE value="Complete showcase design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete showcase design" />
   </component>
 </project>

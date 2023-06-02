@@ -27,22 +27,35 @@ body{
      font-family: Tahoma, Arial, Helvetica, Sans-Serif;
      color: #555;
      lign-spacing: 1.2;
-     line-height: 1.2;
+     line-height: 1.5;
      font-weight: 400;
 }
 
 
-.li-text-align  li {  /* TODO: This should be placed in an appropriate file:  */
+.about-section-list  li {  /* TODO: This should be placed in an appropriate file:  */
     text-align: left;
     list-style-type: none;
     padding-left: 10px;
+/*    padding-right:100px;*/
+    font-size: 18px;
     text-transform: lowercase;
+    display: flex;
  }
+
+
+.laboratory-section-list,
+ .about-section-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+ }
+
+
 
 .custom-bullet li::before{
     content: "❖";
     color: green;
-    margin-right: 40px;
+    margin-right: 30px;
     width: 2px;
     display: inline-block;
   }
@@ -140,12 +153,23 @@ body{
  width:100%;
 }
 
+.navbar a{
+    font-weight: 600;
+}
+
 .navbar-nav{    /* padding to accommodate ALMD logo*/
     margin-left: 200px;
 }
 
+
+
 .nav-img{
  width:25px;
+}
+
+.login{
+    text-decoration: none;
+    font-size: 17px;
 }
 
 #logo{ /* take logo out of html flow and reposition it*/
@@ -157,16 +181,13 @@ body{
 }
 
 section.info-section{
-    position: relative;  /*   $$$$$$$$$$   was changed to relative positioning to fix problem with positioning */
-   /* top:700px;  was commented to fix showcase problem with by using relative positioning*/
-    /* padding: 0px 60px;*/
+    position: relative;
      z-index: 1;
 }
 
 section .container{ /* expand container div for each row in the main article section */
     width:100%;
 }
-
 
 .main-info-image{
     width: 100%;
@@ -183,12 +204,22 @@ section .container{ /* expand container div for each row in the main article sec
  border-radius: 5px;
 }
 
+
+.nutrient-tables{
+    display: flex;
+    font-size: 16px;
+    gap: 60px;
+}
+
+ .table td, .table th {
+    padding: 0 10px;
+  }
+
+
 /*.news-section img{
     border-radius: 5px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }*/
+/*
 
-p{
-text-align: justify;
-}

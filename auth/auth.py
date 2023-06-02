@@ -49,7 +49,6 @@ def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        # hash password and give it 8 rounds of salt
         hash_and_salted_password = generate_password_hash(
             form.password.data,
             method='pbkdf2:sha256',
