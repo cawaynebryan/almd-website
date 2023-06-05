@@ -16,12 +16,6 @@
     padding:0;
 }
 
-/*
-html{
-     font-size: 62.5%;
-}
-*/
-
 
 body{
      font-family: Tahoma, Arial, Helvetica, Sans-Serif;
@@ -29,15 +23,18 @@ body{
      lign-spacing: 1.2;
      line-height: 1.5;
      font-weight: 400;
+     font-size: 19px;
 }
 
 
-.about-section-list  li {  /* TODO: This should be placed in an appropriate file:  */
-    text-align: left;
+.footer ul{
+  list-style: none;
+}
+
+
+.about-section-list  li,
+ .laboratory-section li {  /* TODO: This should be placed in an appropriate file:  */
     list-style-type: none;
-    padding-left: 10px;
-/*    padding-right:100px;*/
-    font-size: 18px;
     text-transform: lowercase;
     display: flex;
  }
@@ -45,15 +42,18 @@ body{
 
 .laboratory-section-list,
  .about-section-list{
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 0px;
  }
 
 
 
 .custom-bullet li::before{
     content: "❖";
+
     color: green;
     margin-right: 30px;
     width: 2px;
@@ -77,9 +77,14 @@ body{
     font-wight: 500;
   }
 
-  h5{
+ h4{
+    font-size: 26px;
+    padding-bottom: 10px;
+ }
+
+ h5{
     font-size: 21px;
-  }
+ }
 
 
 .carousel-section{
@@ -208,13 +213,16 @@ section .container{ /* expand container div for each row in the main article sec
 .nutrient-tables{
     display: flex;
     font-size: 16px;
-    gap: 60px;
+    gap: 100px;
 }
 
  .table td, .table th {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 
+.table tr:nth-child(even){
+    background-color: #b2f2bb;
+}
 
 /*.news-section img{
     border-radius: 5px;

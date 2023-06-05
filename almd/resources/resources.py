@@ -13,5 +13,5 @@ resources_bp = Blueprint(
 
 
 @resources_bp.route('/gis-portal')
-def gis_portal():
+def resources():
     return render_template('resources/gis_portal.html')
