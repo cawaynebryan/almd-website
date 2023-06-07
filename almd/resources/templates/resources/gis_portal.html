@@ -1,2 +1,62 @@
-<h1 style="color:red"> This is the Gis Portal view</h1>
-<p> This is the best paragraph ever</p>
+{% extends 'base.html' %}
+
+{% block container %}
+{% include 'snippets/header.html'%}
+
+<div class="container">
+
+    <section>
+        <P>ALMD is regarded as the pioneers in GIS in the Caribbean. In 1982 the division developed Jamaica's first
+            Geographic Information System (JAMGIS) under the directorship of Mr. Robert de Kruyff. It was not until
+            1986 however, that GIS was successfully implemented. This project was a multi-disciplinary effort by staff
+            from Michigan State University, the United States Department of Agriculture (USDA) , Ohio State University,
+            the Government of Netherlands and the Government of Jamaica under the Comprehensive Resource Inventory and
+            Evaluation Systems (CRIES) project.</P>
+
+        <p>The objective of this project was the creation of a national resource database consisting of soils and land
+            use
+            cover. The strategies put in place to achieve this consisted of land resource assessment, land use i
+            dentification, cartography and database assembly and analysis. Some of the noticeable outputs are:</p>
+
+        <ul class="custom-bullet">
+            <li>The Cocoa Pilot Project Atlas</li>
+            <li>The Natural Resource Atlas for the Parish of Clarendon</li>
+            <li>The Watershed Inventory Project, 1991</li>
+            <li>The Jamaica Physical Land Evaluation Programme (JAMPLES), 1989, (used to determine land suitability for
+                specific crops)
+            </li>
+        </ul>
+    </section>
+
+    <section>
+         <p>In 1982, the Division also implemented the Jamaica Soil Survey Project. Semi-detail soil survey and land
+        evaluation were carried out for the St. Catherine Coastal Plains, Montpelier, North Manchester, Clarendon,
+        Linstead, Bog Walk, Worthy Park and Lluidas Vale. The results of these surveys were published in reports of
+        the same name accompanied by maps. A new soil legend and an agro-climatic zones map were also developed for
+        Jamaica.</p>
+    </section>
+
+    <section>
+        <h2>GIS & MAPPING SERVICES</h2>
+        <p>We have the capability to provide the following services:</p>
+        <ul class="custom-bullet">
+            <li>Data conversion</li>
+            <li>Scanning</li>
+            <li>Vectorizing / Georeferencing</li>
+            <li>Map preparation</li>
+            <li>GPS data capture</li>
+            <li>Land cover / land use surveys</li>
+            <li>Aerial photo interpretation</li>
+        </ul>
+    </section>
+
+    <Section>
+        <h2>MAP PREPARATION</h2>
+        <p>Do you need a map to assist you in your job, project, entrepreneural venture or otherwise? then fill out our
+            Request Form and fax to 977-0326 or email to almd@micaf.gov.jm. You may also contact us by phone at
+            (876) 927-0441. </p>
+    </Section>
+</div>
+
+{% include 'snippets/footer.html'%}
+{% endblock%}
