@@ -19,6 +19,10 @@ class Article(db.Model):
     title = db.Column(db.String(500), nullable=False)
     content = db.Column(db.String(5000), nullable=False)
     picture = db.Column(db.String(500), nullable=False)
+    # isDeleted = db.Column(Boolean, nullable = False)
+    # updated_on = db.Column(db.DateTime, nullable=True)
+    # deleted_on = db.Column(db.DateTime, nullable=True)
+
     # image =  db.relationship('Image',backref = 'article')
 
 
