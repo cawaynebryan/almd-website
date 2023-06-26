@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="complete laboratory section">
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add image to laboratory section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/contact_us/templates/contact-us/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/contact_us/templates/contact-us/contact-us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/laboratory/template/laboratory_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/resources/templates/resources/gis_portal.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/resources/templates/resources/gis_portal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/stylesStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/stylesStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snippets/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/header.html" afterDir="false" />
     </list>
     <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
       <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
@@ -47,16 +44,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALMD/Desktop/automate-restore-file&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ALMD/Desktop/automate-restore-file",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
@@ -321,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686002632606</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add image to laboratory section">
+      <created>1686165703114</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686165703114</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,6 +359,7 @@
     <MESSAGE value="Complete showcase design" />
     <MESSAGE value="start adding content to the laboratory section" />
     <MESSAGE value="complete laboratory section" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete laboratory section" />
+    <MESSAGE value="add image to laboratory section" />
+    <option name="LAST_COMMIT_MESSAGE" value="add image to laboratory section" />
   </component>
 </project>
