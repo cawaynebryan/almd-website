@@ -48,7 +48,16 @@ class AWSFileHandler:
         )
         return url
 
-    def put_object_from_file_stream(self, file_name, image_body):
+    def put_object_from_file_stream_to_static(self, file_name, image_body):
         s3 = self.s3_create_client()
         bucket_name = self.storage_bucket
-        s3.put_object(Bucket=bucket_name, Key=file_name, Body=image_body)
+        s3.put_object(Bucket=bucket_name, Key=f'Static/{file_name}', Body=image_body)
+
+    def put_object_from_file_stream_to_articles(self, file_name, image_body):
+        s3 = self.s3_create_client()
+        bucket_name = self.storage_bucket
+        s3.put_object(Bucket=bucket_name, Key=f'Articles/{file_name}', Body=image_body)
+
+
+
+

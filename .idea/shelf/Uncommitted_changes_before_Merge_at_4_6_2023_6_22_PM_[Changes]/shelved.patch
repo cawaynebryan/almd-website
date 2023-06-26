@@ -1,0 +1,123 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,13 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="fix bug with api">
++    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="commit before rebase">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/almd/news/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/news.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/events_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/events/events_page.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/news/templates/news/news_page_update.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/auth/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/auth.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -38,7 +41,7 @@
+     </favorite-branches>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="910fd8714248db4485cb2d1ccf5e8cbdc68349d3" />
++        <entry key="$PROJECT_DIR$" value="7de65de2036ba612b45e512b9e673a0d76d65c70" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -59,17 +62,28 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALMD/Desktop/ALMD WEB PROJECT&quot;,
++    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
++  }
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT" />
+       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
+       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\images" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\almd\news\templates\events" />
++      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static" />
+       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\css" />
+       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\register" />
+       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\login" />
+-      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\private" />
+-      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates" />
+     </key>
+   </component>
+   <component name="RunManager" selected="Python.app">
+@@ -267,28 +281,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1680020172538</updated>
+     </task>
+-    <task id="LOCAL-00011" summary="Update api call to store data to database">
+-      <created>1680300003823</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1680300003823</updated>
+-    </task>
+-    <task id="LOCAL-00012" summary="aded s3 capability">
+-      <created>1680306842744</created>
+-      <option name="number" value="00012" />
+-      <option name="presentableId" value="LOCAL-00012" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1680306842744</updated>
+-    </task>
+-    <task id="LOCAL-00013" summary="fix bug with api">
+-      <created>1680536683944</created>
+-      <option name="number" value="00013" />
+-      <option name="presentableId" value="LOCAL-00013" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1680536683945</updated>
+-    </task>
+-    <option name="localTasksCounter" value="14" />
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -313,7 +306,6 @@
+         </entry>
+       </map>
+     </option>
+-    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="create navbar and add video to header section" />
+@@ -326,9 +318,6 @@
+     <MESSAGE value="restructure misplaced form to correct location" />
+     <MESSAGE value="add footer to website" />
+     <MESSAGE value="Add about us page" />
+-    <MESSAGE value="Update api call to store data to database" />
+-    <MESSAGE value="aded s3 capability" />
+-    <MESSAGE value="fix bug with api" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix bug with api" />
++    <option name="LAST_COMMIT_MESSAGE" value="Add about us page" />
+   </component>
+ </project>
+\ No newline at end of file
+diff --git a/almd/news/templates/news/events_page.html b/almd/news/templates/events/events_page.html
+rename from almd/news/templates/news/events_page.html
+rename to almd/news/templates/events/events_page.html

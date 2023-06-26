@@ -3,9 +3,11 @@
 {% block container %}
 {% include 'snippets/header.html'%}
 
+<link href="/static/styles.css" type="text/css">
+
 <div class="container">
 
-    <section>
+    <section class="pt-5">
         <P>ALMD is regarded as the pioneers in GIS in the Caribbean. In 1982 the division developed Jamaica's first
             Geographic Information System (JAMGIS) under the directorship of Mr. Robert de Kruyff. It was not until
             1986 however, that GIS was successfully implemented. This project was a multi-disciplinary effort by staff
@@ -36,26 +38,62 @@
         Jamaica.</p>
     </section>
 
-    <section>
-        <h2>GIS & MAPPING SERVICES</h2>
-        <p>We have the capability to provide the following services:</p>
-        <ul class="custom-bullet">
-            <li>Data conversion</li>
-            <li>Scanning</li>
-            <li>Vectorizing / Georeferencing</li>
-            <li>Map preparation</li>
-            <li>GPS data capture</li>
-            <li>Land cover / land use surveys</li>
-            <li>Aerial photo interpretation</li>
-        </ul>
+    <section class="row">
+        <div class="gis-service-left col">
+             <h2>GIS & MAPPING SERVICES</h2>
+            <p>We have the capability to provide the following services:</p>
+            <ul class="custom-bullet">
+                <li>Data conversion</li>
+                <li>Scanning</li>
+                <li>Vectorizing / Georeferencing</li>
+                <li>Map preparation</li>
+                <li>GPS data capture</li>
+                <li>Land cover / land use surveys</li>
+                <li>Aerial photo interpretation</li>
+            </ul>
+        </div >
+
+        <div class="gis-service-right col">
+            {% include '/snippets/gis-carousel.html' %}
+        </div>
+
     </section>
 
-    <Section>
+     <Section>
         <h2>MAP PREPARATION</h2>
         <p>Do you need a map to assist you in your job, project, entrepreneural venture or otherwise? then fill out our
             Request Form and fax to 977-0326 or email to almd@micaf.gov.jm. You may also contact us by phone at
             (876) 927-0441. </p>
     </Section>
+
+    <section class="pt-1 pb-4">
+        <h4>Links & Downloads</h4>
+        <div class="row map-images">
+            <div class="map-collections col">
+                <p>Downloads</p>
+                <img src="/static/files/almd-department.png"/>
+            </div>
+             <div class="map-collections col">
+                <p>Downloads</p>
+                <img src="/static/files/almd-department.png"/>
+            </div>
+             <div class="map-collections col">
+                <p>Downloads</p>
+                <img src="/static/files/almd-department.png"/>
+            </div>
+             <div class="map-collections col">
+                <p>Downloads</p>
+                <img src="/static/files/almd-department.png"/>
+            </div>
+             <div class="map-collections col">
+                <p>Downloads</p>
+                <img src="/static/files/almd-department.png"/>
+            </div>
+        </div>
+
+    </section>
+
+
 </div>
 
 {% include 'snippets/footer.html'%}
