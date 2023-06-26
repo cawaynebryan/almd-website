@@ -71,7 +71,7 @@ def create_article():
 
     print("__________________________")
     if image_file:
-        handler.put_object_from_file_stream(file_name=image_name, image_body=image_file)
+        s3_handler.put_object_from_file_stream_to_articles(file_name=image_name, image_body=image_file)
         if form:
             if form.title.data: #TODO: Edit to remove erelevand data
                 new_article = Article(
@@ -197,21 +197,8 @@ def delete_article_by_id(id: int):
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
 
 
-@api_bp.route('recyleBin/article/')
-def recylceBin():
-     
-    pass
-
-@api_bp.route('recyleBin/article/<:id>')
-
-@api_bp.route('recyleBin/article/<:id>/remove')
-
-
-@api_bp.route('recyleBin/empty')
-
-
-@api_bp.route('/image-server/<imageName>', methods=['GET', 'POST'])
-def get_image(imageName):
+@api_bp.route('/image-server-static/<imageName>', methods=['GET', 'POST'])
+def get_image_static(imageName):
     """Fetch Image from image server."""
     print(imageName)
     try:
@@ -228,3 +215,21 @@ def get_image(imageName):
         print(f'The error is: {error}')
         return "File Not Found"
 
+
+@api_bp.route('/image-server-articles/<imageName>', methods=['GET', 'POST'])
+def get_image_articles(imageName):
+    """Fetch Image from image server."""
+    print(imageName)
+    try:
+        s3 = boto3.client(
+            's3',
+            aws_access_key_id=os.environ.get('AWS_ACCESS_KEY_ID'),
+            aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
+        s3_object = s3.get_object(Bucket=BUCKET_NAME, Key=f'Articles/{imageName}')
+        return s3_object['Body'].read()
+
+    except botocore.exceptions.ClientError as error:
+        flash(f'image {imageName} was not found')
+        print(f"file: {imageName} not found!")
+        print(f'The error is: {error}')
+        return "File Not Found"

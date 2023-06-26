@@ -15,13 +15,13 @@ class CatalogueForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
-    username = StringField("Username", validators=[DataRequired()])
+    username = StringField("Username", validators=[InputRequired()])
     submit = SubmitField("Sign Me Up!")
 
 
 class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
-    username = StringField("Username", validators=[DataRequired()])
+    username = StringField("Username", validators=[InputRequired()])
     submit = SubmitField("Login")
 
 

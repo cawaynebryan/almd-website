@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="add image to laboratory section">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
-      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
-    </list>
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Added static files to git" />
+    <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,22 +44,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ALMD/Desktop/automate-restore-file",
+    "last_opened_file_path": "C:/Users/ALMD/OneDrive/Desktop/ALMD WEB PROJECT/almd/resources/templates/snippets",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ALMD\OneDrive\Desktop\ALMD WEB PROJECT\almd\resources\templates\snippets" />
+      <recent name="C:\Users\ALMD\OneDrive\Desktop\ALMD WEB PROJECT\almd\resources\static" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\files" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ALMD\OneDrive\Desktop\ALMD WEB PROJECT\almd\resources\static\files" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\static\css" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\register" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\login" />
       <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates\private" />
-      <recent name="C:\Users\ALMD\Desktop\ALMD WEB PROJECT\auth\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -132,27 +128,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ALMD WEB PROJECT" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/models.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="news" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ALMD WEB PROJECT" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,13 +149,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="seaborn_visualizations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ALMD WEB PROJECT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Data_Visualization/seaborn" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Data_Visualization/seaborn/seaborn_visualizations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.seaborn_visualizations" />
         <item itemvalue="Python.api" />
         <item itemvalue="Python.news" />
         <item itemvalue="Python.forms" />
-        <item itemvalue="Python.models" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1686165703114</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added static files to git">
+      <option name="closed" value="true" />
+      <created>1687792882038</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687792882038</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,6 +364,7 @@
     <MESSAGE value="start adding content to the laboratory section" />
     <MESSAGE value="complete laboratory section" />
     <MESSAGE value="add image to laboratory section" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image to laboratory section" />
+    <MESSAGE value="Added static files to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added static files to git" />
   </component>
 </project>

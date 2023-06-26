@@ -228,5 +228,24 @@ section .container{ /* expand container div for each row in the main article sec
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }*/
-/*
+
+
+/* GIS Section CSS*/
+.map-collections img{
+    max-width: 100%;
+    height: 180x;
+}
+
+.map-collections p{
+    margin-bottom: 0px;
+
+}
+
+.map-collections {
+   border-right:  4px solid rgba(210, 210, 210, 0.3);
+}
+
+.map-collections:last-child {
+   border-right: 0;
+}
 
