@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Added static files to git">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ALMD WEB PROJECT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_6_2023_6_22_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_6_2023_6_22_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_52_AM_[Changes]/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_52_AM_[Changes]/401-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_52_AM_[Changes]/database.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_52_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_52_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instance/database.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/almd-department.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/carousel1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/facebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/instagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/lab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/landscape_video.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/twitter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/files/youtube.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/almd/resources/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/almd/resources/templates/resources/gis_portal.html" beforeDir="false" afterPath="$PROJECT_DIR$/almd/resources/templates/resources/gis_portal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snippets/gis-carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snippets/gis-carousel.html" afterDir="false" />
-    </list>
-    <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="">
-      <change beforePath="$PROJECT_DIR$/almd/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/almd/forms/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/aws.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/aws.py" afterDir="false" />
-    </list>
+    <list default="true" id="f1c40112-6bc6-4668-8537-5b9316edcc4c" name="Changes" comment="Added static files to git" />
+    <list id="ef2df2d8-ff00-4f35-b184-3a0b59977e5e" name="Changes by Lenovo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
