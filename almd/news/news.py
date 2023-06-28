@@ -54,12 +54,14 @@ def git_individual_article_by_id(article_id):
     # get recent article
     frequent_article_url = url_for('api_bp.get_first_four_articles_from_catalogue', _external=True)
     frequent_article = requests.get(frequent_article_url)
+    frequent_article = json.loads(frequent_article.content.decode())
+    frequent_article['articles'].pop()
+    print(type(frequent_article))
 
     url = url_for('api_bp.get_article_by_id', id=article_id, _external=True)
     response = requests.get(url)
-    print(response.json())
     return render_template('news/news_article.html', article=response.json()['article'],
-                           latest_news=frequent_article.json()['articles'])
+                           latest_news=frequent_article['articles'])
 
 
 @news_bp.route('/events')

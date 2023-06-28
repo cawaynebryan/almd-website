@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for
 from flask_ckeditor import CKEditor
-
 from flask_login import LoginManager
 from models.models import Admin
 import os
