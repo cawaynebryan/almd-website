@@ -7,6 +7,7 @@ from datetime import date
 import os
 import boto3
 import botocore
+import markupsafe
 
 aws_access_key = os.environ.get('AWS_ACCESS_KEY_ID')     # TODO: to be added to aws api calls
 aws_secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
@@ -89,26 +90,43 @@ def create_article():
     else:
         return jsonify(error={'failure': 'No image file was provided.'}), 404
 
-
-@api_bp.route('/article/<int:id>')  # /article/jack-bauer --> update the article on jack-bauer
-def replace_article_by_id(id: int):
+    """_summary_
+        This updates an article that is already present in the system.
+        It captures what is given on a form and makes the adjustments to the article that 
+        is present. 
+        Also it prefills the form with the current information so that it can be used as a 
+        reference for making edits.
+    Returns:
+        json : with the data that is fetched from the DB that is to be prefilled on the form
+              for reference.
+        json : success or failure message of action
+    """
+@api_bp.route('/article/<int:id>/update',methods = ['POST','GET'])  # /article/jack-bauer --> update the article on jack-bauer
+def Update_article(id: int):
     api_key = request.args.get('api-key')
     if api_key == API_KEY_:
-        if api_key:
-            selected_article = db.get_or_404(Article, id)
-            selected_article.title = 'New title goes here'
-            selected_article.picture = 'New content goes here'
-            selected_article.content = 'This is where the new article content goes'
-            db.session.add(selected_article)
+        if request.method == "POST":
+            # cleanse and validifiy data from the form and use to update the article
+            selected_article = db.get_or_404(Article, id).first()
+            selected_article.title = markupsafe.escape(request.form['title'])
+            selected_article.picture = markupsafe.escape(request.form['image'])
+            selected_article.content = markupsafe.escape(request.form['article'])
+            #db.session.add(selected_article)
             db.session.commit()
             return jsonify(response={'success': 'Successfully updated the article in the catalogue'}), 200
         else:
             return jsonify(
-                error={'failure': 'Something went wrong! could not replace the article in the catalogue.'}), 404
+                error={'failure': 'Something went wrong! could not replace the article in the catalogue.'}), 304
     else:
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
 
 
+"""
+BEFORE DOING SOMETHING LIKE THIS ENSURE THE 
+USER CONFIRMS BY TYPING 'DELETE ALL' TO ENSURE THAT THE ACTION TO BE DONE
+IS UNDERSTOOD
+
+"""
 @api_bp.route('/article', methods=['DELETE'])  # /article --> delete all article
 def delete_article_catalogue():
     api_key = request.args.get('api-key')
@@ -128,16 +146,44 @@ def delete_article_catalogue():
                 error={'failure': 'Something went wrong! could not delete the articles in the catalogue'}), 404
     else:
         return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
+    
+    """_summary_
+        The intention of this service is to enable the Administrator the ability to 
+        remove a particular article from the catalogue 
+    Returns:
+        json : success message
+        json : failure message
+    """
 
-
-@api_bp.route('/article/<int:id>', methods=['DELETE'])  # /article/jack-bauer --> delete a specific article
+@api_bp.route('/article/<int:id>/delete', methods=['DELETE'])  # /article/jack-bauer --> delete a specific article
 def delete_article_by_id(id: int):
     print(id)
     article = db.get_or_404(Article, id)
     api_key = request.args.get('api-key')
     if api_key == API_KEY_:
         if article:
-            db.session.delete(article)
+            article.isDeleted = True
+            db.session.commit()
+            s3_handler.delete_binary_file(article.picture)
+            print(article.picture)
+            print(type(article.picture))
+            return jsonify(response={'success': f'successfully deleted article with id:{article.id}'
+                                                f'from the article form the database'}), 200
+        else:
+            db.session.rollback()
+            return jsonify(error={"failure": "Sorry an article with that id was not found in the database."}), 404
+    else:
+        return jsonify(error={"Invalid Key": "Please enter a valid API key"}), 403
+
+
+@api_bp.route('/article/<int:id>/delete', methods=['DELETE'])  # /article/jack-bauer --> delete a specific article
+def delete_article_by_id(id: int):
+    print(id)
+    article = db.get_or_404(Article, id)
+    api_key = request.args.get('api-key')
+    if api_key == API_KEY_:
+        if article:
+            article.isDeleted = True
             db.session.commit()
             s3_handler.delete_binary_file(article.picture)
             print(article.picture)
