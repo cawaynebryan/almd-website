@@ -15,6 +15,7 @@ from almd.contact_us.contact_us import contact_bp
 from almd.services.services import services_bp
 from flask_bootstrap import Bootstrap
 import requests
+from flask_migrate import Migrate
 
 
 load_dotenv()
@@ -37,7 +38,9 @@ app.register_blueprint(api_bp, url_prefix='/api')
 app.register_blueprint(lab_bp, url_prefix='/laboratory')
 
 db.init_app(app)  # Bind database to current flask app
+migrate = Migrate(app, db) #used to manage changes to the DB in an incremental way
 ckeditor = CKEditor(app)  # instantiate CKEditor onto the flask app
+
 #Bootstrap(app)
 # app.config['CKEDITOR_HEIGHT'] = 1000
 # app.config['CKEDITOR_WDITH'] = 400
